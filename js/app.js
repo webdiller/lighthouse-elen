@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const name = item.dataset.trigger;
           const modal = document.getElementById(name);
           if (modal) {
-            modal.classList.add("modal_active");
+            modal.classList.add("active");
           }
         });
       });
@@ -28,9 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (modals) {
       modals.forEach(item => {
         item.addEventListener("click", function (e) {
-          if (e.target.classList.contains("modal") || e.target.classList.contains("modal__container") || e.target.classList.contains("modal__top-close-img") || e.target.classList.contains("subscribe-modal__close-img")) {
-            item.classList.remove("modal_active");
-            item.classList.remove("subscribe-modal_active");
+          if (
+            e.target.classList.contains("modal__top-close-img") ||
+            e.target.classList.contains("modal__container") ||
+            e.target.classList.contains("modal") ||
+            e.target.classList.contains("subscribe-modal__close-img") ||
+            e.target.dataset?.type?.includes('modal') 
+            ) {
+            item.classList.remove("active");
           }
         });
       });

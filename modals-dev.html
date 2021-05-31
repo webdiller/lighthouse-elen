@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<!-- <base href="/"> -->
 
-	<title>ElanDan - Каталог</title>
+	<title>ElanDan - модалки</title>
 	<meta name="description" content="ElanDan">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -25,7 +25,7 @@
 </head>
 
 <body>
-<div id="topNav" class="top-nav top-nav_catalog">
+<div id="topNav" class="top-nav">
   <div class="top-nav__wrapper">
     <button id="menuBtn" class="top-nav__menu">
       <img src="./images/dist/menu-bar.svg" alt="Меню" class="top-nav__menu-img">
@@ -53,224 +53,38 @@
   </div>
 </div>
 
+<style>
+    .modals-dev {
+        height: 70vh;
+    }
+    .modals-dev__wrapper {
+        max-width: calc(1050px + 40px);
+        padding: 0 20px;
+        width: 100%;
+        margin: 60px auto;
+        text-align: center;
 
-<div class="breadcrumbs breadcrumbs_catalog">
-  <a href="#!" class="breadcrumbs__item">Главная</a>
-  <span class="breadcrumbs__item breadcrumbs__item_last"> <img src="./images/dist/icon-arrow-right_grey.svg" alt="Главная" class="breadcrumbs__item-img breadcrumbs__item-img_last" /> Каталог</span>
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .modals-dev__btn {
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+</style>
+
+<div class="modals-dev">
+    <div class="modals-dev__wrapper">
+        <button data-trigger="modalAddBasket" data-type="callModal" class="btn modals-dev__btn">Товар успешно добавлен в корзину.</button>
+        <button data-trigger="modalCall" data-type="callModal" class="btn modals-dev__btn">Свяжитесь с нами!</button>
+        <button data-trigger="modalCallSuccess" data-type="callModal" class="btn modals-dev__btn">Наш менеджер свяжется с вами в течении двух часов.</button>
+        <button data-trigger="modalOrderSuccess" data-type="callModal" class="btn modals-dev__btn">Ваш заказ успешно оформлен.</button>
+        <button data-trigger="modalLogin" data-type="callModal" class="btn modals-dev__btn">АВТОРИЗАЦИЯ ПО НОМЕРУ</button>
+        <button data-trigger="modalSubscribe" data-type="callModal" class="btn modals-dev__btn">Подпишитесь на новости!</button>
+    </div>
 </div>
-
-<div class="catalog">
-  <div class="catalog__wrapper">
-      <div class="catalog-sidebar">
-  <div class="catalog-sidebar__wrapper">
-    <p class="title title_h4 catalog-sidebar__title">Каталог</p>
-    <nav class="catalog-sidebar__nav">
-      <a href="#!" class="catalog-sidebar__item">SPECIAL SALE</a>
-      <a href="#!" class="catalog-sidebar__item">NEW COLLECTION</a>
-      <a href="#!" class="catalog-sidebar__item">AMOUR</a>
-      <a href="#!" class="catalog-sidebar__item">ALAKRA</a>
-      <a href="#!" class="catalog-sidebar__item">Брюки и шорты</a>
-      <a href="#!" class="catalog-sidebar__item">Верхняя одежда</a>
-      <a href="#!" class="catalog-sidebar__item">Деним</a>
-      <a href="#!" class="catalog-sidebar__item">Жакеты</a>
-      <a href="#!" class="catalog-sidebar__item catalog-sidebar__item_active">Жакеты</a>
-      <a href="#!" class="catalog-sidebar__item">Подарочный сертификат</a>
-      <a href="#!" class="catalog-sidebar__item">SPECIAL SALE</a>
-      <a href="#!" class="catalog-sidebar__item">NEW COLLECTION</a>
-      <a href="#!" class="catalog-sidebar__item">AMOUR</a>
-      <a href="#!" class="catalog-sidebar__item">ALAKRA</a>
-      <a href="#!" class="catalog-sidebar__item">Брюки и шорты</a>
-      <a href="#!" class="catalog-sidebar__item">Верхняя одежда</a>
-      <a href="#!" class="catalog-sidebar__item">Деним</a>
-      <a href="#!" class="catalog-sidebar__item">Жакеты</a>
-      <a href="#!" class="catalog-sidebar__item">Юбки</a>
-    </nav>
-  </div>
-</div>
-
-      <div class="catalog__content">
-        <div class="catalog-banner">
-  <div class="catalog-banner__wrapper">
-    <div class="catalog-banner__content">
-      <h1 class="title title_h3 catalog-banner__title">Платья</h1>
-      <p class="catalog-banner__text">
-        Как принято считать, сторонники тоталитаризма в науке освещают чрезвычайно интересные
-        особенности картины в целом, однако конкретные выводы, разумеется, обнародованы.
-      </p>
-    </div>
-    <img src="./images/dist/logo-empty_black.svg" alt="Платья" class="catalog-banner__logo" />
-    <img src="./images/dist/catalog-banner-img.jpg" alt="Платья" class="catalog-banner__img" />
-  </div>
-</div>
-
-        <div class="custom-select custom-select_catalog">
-          <p class="custom-select__title">Выберите размер <img src="./images/dist/arrow-down_grey.svg" alt="Выберите размер" class="custom-select__icon"></p>
-        </div>
-        <div class="catalog-items">
-  <div class="catalog-items__wrapper">
-    <div class="catalog-items__item">
-      <div class="catalog-items__images">
-        <picture class="catalog-items__picture">
-          <source srcset="./images/dist/catalog-item@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/catalog-item@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/catalog-item@2x.jpg" media="(min-width: 991px)" />
-          <img class="catalog-items__picture-img" src="./images/dist/catalog-item@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
-      </div>
-
-      <div class="catalog-items__actions">
-        <span class="catalog-items__action catalog-items__action_active"></span>
-        <div class="catalog-items__action"></div>
-        <div class="catalog-items__action"></div>
-        <div class="catalog-items__action"></div>
-      </div>
-
-      <div class="catalog-items__top">
-        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
-        <p class="catalog-items__top-price">7 500 ₽</p>
-      </div>
-
-      <div class="catalog-items__bottom">
-        <p class="catalog-items__bottom-sizes">
-          <span class="catalog-items__size">XS</span>
-          <span class="catalog-items__size">S</span>
-          <span class="catalog-items__size">M</span>
-          <span class="catalog-items__size">L</span>
-        </p>
-        <p class="catalog-items__bottom-price">7 500 ₽</p>
-        <p class="catalog-items__bottom-colors">
-          <span style="color: #ffcd9f;" class="catalog-items__color"></span>
-          <span style="color: #000000;" class="catalog-items__color"></span>
-          <span style="color: #c4c4c4;" class="catalog-items__color"></span>
-        </p>
-      </div>
-    </div>
-
-    <div class="catalog-items__item">
-      <div class="catalog-items__images">
-        <picture class="catalog-items__picture">
-          <source srcset="./images/dist/catalog-item@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/catalog-item@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/catalog-item@2x.jpg" media="(min-width: 991px)" />
-          <img class="catalog-items__picture-img" src="./images/dist/catalog-item@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
-      </div>
-
-      <div class="catalog-items__actions">
-        <span class="catalog-items__action catalog-items__action_active"></span>
-        <span class="catalog-items__action"></span>
-        <span class="catalog-items__action"></span>
-        <span class="catalog-items__action"></span>
-      </div>
-
-      <div class="catalog-items__top">
-        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
-        <p class="catalog-items__top-price">7 500 ₽</p>
-      </div>
-
-      <div class="catalog-items__bottom">
-        <p class="catalog-items__bottom-sizes">
-          <span class="catalog-items__size">XS</span>
-          <span class="catalog-items__size">S</span>
-          <span class="catalog-items__size">M</span>
-          <span class="catalog-items__size">L</span>
-        </p>
-        <p class="catalog-items__bottom-price">7 500 ₽</p>
-        <p class="catalog-items__bottom-colors">
-          <span style="color: #ffcd9f;" class="catalog-items__color"></span>
-          <span style="color: #000000;" class="catalog-items__color"></span>
-          <span style="color: #c4c4c4;" class="catalog-items__color"></span>
-        </p>
-      </div>
-    </div>
-
-    <div class="catalog-items__item">
-      <div class="catalog-items__images">
-        <picture class="catalog-items__picture">
-          <source srcset="./images/dist/catalog-item@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/catalog-item@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/catalog-item@2x.jpg" media="(min-width: 991px)" />
-          <img class="catalog-items__picture-img" src="./images/dist/catalog-item@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
-      </div>
-
-      <div class="catalog-items__actions">
-        <span class="catalog-items__action catalog-items__action_active"></span>
-        <div class="catalog-items__action"></div>
-        <div class="catalog-items__action"></div>
-        <div class="catalog-items__action"></div>
-      </div>
-
-      <div class="catalog-items__top">
-        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
-        <p class="catalog-items__top-price">7 500 ₽</p>
-      </div>
-
-      <div class="catalog-items__bottom">
-        <p class="catalog-items__bottom-sizes">
-          <span class="catalog-items__size">XS</span>
-          <span class="catalog-items__size">S</span>
-          <span class="catalog-items__size">M</span>
-          <span class="catalog-items__size">L</span>
-        </p>
-        <p class="catalog-items__bottom-price">7 500 ₽</p>
-        <p class="catalog-items__bottom-colors">
-          <span style="color: #ffcd9f;" class="catalog-items__color"></span>
-          <span style="color: #000000;" class="catalog-items__color"></span>
-          <span style="color: #c4c4c4;" class="catalog-items__color"></span>
-        </p>
-      </div>
-    </div>
-
-    <div class="catalog-items__item">
-      <div class="catalog-items__images">
-        <picture class="catalog-items__picture">
-          <source srcset="./images/dist/catalog-item@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/catalog-item@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/catalog-item@2x.jpg" media="(min-width: 991px)" />
-          <img class="catalog-items__picture-img" src="./images/dist/catalog-item@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
-      </div>
-
-      <div class="catalog-items__actions">
-        <span class="catalog-items__action catalog-items__action_active"></span>
-        <span class="catalog-items__action"></span>
-        <span class="catalog-items__action"></span>
-        <span class="catalog-items__action"></span>
-      </div>
-
-      <div class="catalog-items__top">
-        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
-        <p class="catalog-items__top-price">7 500 ₽</p>
-      </div>
-
-      <div class="catalog-items__bottom">
-        <p class="catalog-items__bottom-sizes">
-          <span class="catalog-items__size">XS</span>
-          <span class="catalog-items__size">S</span>
-          <span class="catalog-items__size">M</span>
-          <span class="catalog-items__size">L</span>
-        </p>
-        <p class="catalog-items__bottom-price">7 500 ₽</p>
-        <p class="catalog-items__bottom-colors">
-          <span style="color: #ffcd9f;" class="catalog-items__color"></span>
-          <span style="color: #000000;" class="catalog-items__color"></span>
-          <span style="color: #c4c4c4;" class="catalog-items__color"></span>
-        </p>
-      </div>
-    </div>
-
-    <div class="catalog-items__show-more">
-      <button class="btn btn_black catalog-items__show-more-btn">загрузить еще</button>
-    </div>
-  </div>
-</div>
-
-      </div>
-  </div>
-</div>
-
-<footer class="footer footer_catalog">
+<footer class="footer">
   <div class="footer__wrapper">
     <div class="footer__lists">
       <div class="footer__left">
@@ -508,4 +322,4 @@
 	<script src="./js/app.js"></script>
 
 </body>
-</html>
+</html>   
