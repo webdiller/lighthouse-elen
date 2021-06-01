@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="./fonts/stylesheet.css" />
     <link rel="preload" as="style" href="./fonts/stylesheet.css" type="text/css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/brazzers-carousel@1.0.1/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.css" />
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/brazzers-carousel@1.0.1/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.css" type="text/css" />
+
 	<!-- <meta property="og:image" content="images/dist/preview.jpg"> -->
 	
 	<link rel="stylesheet" href="css/style.css" />
@@ -65,7 +68,7 @@
     </div>
 
     <div class="basket__items">
-      <div class="basket__item">
+      <div data-basket-item class="basket__item">
         <div class="basket__item-media">
           <picture class="basket__picture">
             <source srcset="./images/dist/card1@4x.jpg" media="(min-width: 1920px)" />
@@ -77,17 +80,17 @@
         <div class="basket__content">
           <p class="basket__name">Брюки-бананы со стрелками</p>
           <p class="basket__code">Артикул: G.N.35/6001</p>
-          <div class="basket__counter">
-            <button class="basket__counter-btn basket__counter-btn-minus"><img src="./images/dist/icon-minus_grey.svg" alt="Убрать"></button>
-            <input value="1" type="number" class="basket__counter-input" />
-            <button class="basket__counter-btn basket__counter-btn-plus"><img src="./images/dist/icon-plus_grey.svg" alt="Добавить"></button>
+          <div data-type="counter" class="basket__counter">
+            <button data-type="counterMinus" class="basket__counter-btn basket__counter-btn-minus"><img src="./images/dist/icon-minus_grey.svg" alt="Убрать"></button>
+            <input readonly data-price="3980" data-type="counterInput" value="1" type="number" class="basket__counter-input" />
+            <button data-type="counterPlus" class="basket__counter-btn basket__counter-btn-plus"><img src="./images/dist/icon-plus_grey.svg" alt="Добавить"></button>
           </div>
-          <p class="basket__price">3 980 ₽</p>
-          <button class="basket__delete"><img src="./images/dist/icon-basket_grey.svg" alt="Удалить товар" class="basket__delete-icon" /></button>
+          <p data-result class="basket__price"><span>3 980 </span>₽</p>
+          <button data-remove class="basket__delete"><img src="./images/dist/icon-basket_grey.svg" alt="Удалить товар" class="basket__delete-icon" /></button>
         </div>
       </div>
 
-      <div class="basket__item">
+      <div data-basket-item class="basket__item">
         <div class="basket__item-media">
           <picture class="basket__picture">
             <source srcset="./images/dist/card2@4x.jpg" media="(min-width: 1920px)" />
@@ -99,13 +102,13 @@
         <div class="basket__content">
           <p class="basket__name">Брюки-бананы со стрелками</p>
           <p class="basket__code">Артикул: G.N.35/6001</p>
-          <div class="basket__counter">
-            <button class="basket__counter-btn basket__counter-btn-minus"><img src="./images/dist/icon-minus_grey.svg" alt="Убрать"></button>
-            <input value="1" type="number" class="basket__counter-input" />
-            <button class="basket__counter-btn basket__counter-btn-plus"><img src="./images/dist/icon-plus_grey.svg" alt="Добавить"></button>
+          <div data-type="counter" class="basket__counter">
+            <button data-type="counterMinus" class="basket__counter-btn basket__counter-btn-minus"><img src="./images/dist/icon-minus_grey.svg" alt="Убрать"></button>
+            <input readonly data-price="41499" data-type="counterInput" value="1" type="number" class="basket__counter-input" />
+            <button data-type="counterPlus" class="basket__counter-btn basket__counter-btn-plus"><img src="./images/dist/icon-plus_grey.svg" alt="Добавить"></button>
           </div>
-          <p class="basket__price">41 499 ₽</p>
-          <button class="basket__delete"><img src="./images/dist/icon-basket_grey.svg" alt="Удалить товар" class="basket__delete-icon" /></button>
+          <p data-result class="basket__price"><span>41 499</span> ₽</p>
+          <button data-remove class="basket__delete"><img src="./images/dist/icon-basket_grey.svg" alt="Удалить товар" class="basket__delete-icon" /></button>
         </div>
       </div>
     </div>
@@ -113,7 +116,7 @@
     <div class="basket__total">
       <div class="basket__total-wrapper">
         <p class="basket__total-title">Итого:</p>
-        <p class="basket__total-price">45 479 ₽</p>
+        <p id="basketTotal" class="basket__total-price"> <span>45 479</span>  ₽</p>
       </div>
     </div>
     <div class="basket__order-wrapper">
@@ -357,8 +360,7 @@
 	
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	
-	<script src="./js/app.js"></script>
+	<script src="./js/app.min.js"></script>
 
 </body>
 </html>

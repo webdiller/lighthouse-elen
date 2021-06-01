@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<!-- <base href="/"> -->
 
-	<title>ElanDan - страницы не существует</title>
+	<title>ElanDan - модалки</title>
 	<meta name="description" content="ElanDan">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -16,9 +16,6 @@
 
     <link rel="stylesheet" href="./fonts/stylesheet.css" />
     <link rel="preload" as="style" href="./fonts/stylesheet.css" type="text/css" />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/brazzers-carousel@1.0.1/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.css" />
-    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/brazzers-carousel@1.0.1/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.css" type="text/css" />
 
 	<!-- <meta property="og:image" content="images/dist/preview.jpg"> -->
 	
@@ -56,15 +53,79 @@
   </div>
 </div>
 
+<style>
+    .modals-dev {
+        height: 70vh;
+    }
+    .modals-dev__wrapper {
+        max-width: calc(1050px + 40px);
+        padding: 0 20px;
+        width: 100%;
+        margin: 60px auto;
+        text-align: center;
 
-<div class="error">
-    <div class="error__wrapper">
-        <a href="#!" class="error__logo"><img src="./images/dist/logo-large_black.svg" alt="Страница не найдена" class="error__logo-img"></a>
-        <h1 class="error__title">Ой! Страницы не существует</h1>
-        <img src="./images/dist/error-img.jpg" alt="Ой! Страницы не существует">
-        <a href="#!" class="btn btn_black error__link">Перейти на главную</a>
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .modals-dev__btn {
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+</style>
+
+<div class="modals-dev">
+    <div class="modals-dev__wrapper">
+        <button data-trigger="modalAddBasket" data-type="callModal" class="btn modals-dev__btn">Товар успешно добавлен в корзину.</button>
+        <button data-trigger="modalCall" data-type="callModal" class="btn modals-dev__btn">Свяжитесь с нами!</button>
+        <button data-trigger="modalCallSuccess" data-type="callModal" class="btn modals-dev__btn">Наш менеджер свяжется с вами в течении двух часов.</button>
+        <button data-trigger="modalOrderSuccess" data-type="callModal" class="btn modals-dev__btn">Ваш заказ успешно оформлен.</button>
+        <button data-trigger="modalLogin" data-type="callModal" class="btn modals-dev__btn">АВТОРИЗАЦИЯ ПО НОМЕРУ</button>
+        <button data-trigger="modalSubscribe" data-type="callModal" class="btn modals-dev__btn">Подпишитесь на новости!</button>
     </div>
 </div>
+<footer class="footer">
+  <div class="footer__wrapper">
+    <div class="footer__lists">
+      <div class="footer__left">
+        <div class="footer__left-item">
+          <p class="footer__left-item-title">позвоните нам</p>
+          <p class="footer__left-item-subtitle">Контактный телефон</p>
+          <a href="tel:+79683660033" class="footer__left-item-text">+7 968 366 00 33</a>
+        </div>
+        <div class="footer__left-item">
+          <p class="footer__left-item-title">наш бутик</p>
+          <p class="footer__left-item-subtitle">Москва</p>
+          <p class="footer__left-item-text">Набережная Тараса Шевченко, дом 3, корпус 3</p>
+        </div>
+      </div>
+
+      <nav class="footer__nav">
+        <a href="/about.html" class="footer__nav-item">О НАС</a>
+        <a href="/catalog.html" class="footer__nav-item footer__nav-item_accent">КАТАЛОГ</a>
+        <a href="/payment-delivery.html" class="footer__nav-item footer__nav-item_mobile">ДОСТАВКА</a>
+        <a href="#!" class="footer__nav-item footer__nav-item_mobile">возврат</a>
+        <a href="/contacts.html" class="footer__nav-item">КОНТАКТЫ</a>
+      </nav>
+
+      <nav class="footer__right footer__right_desktop">
+        <a href="#!" class="footer__right-item">Политика конфиденциальности</a>
+        <a href="#!" class="footer__right-item">Пользовательское соглашение</a>
+        <a href="#!" class="footer__right-item footer__right-item_accent">Оферта</a>
+      </nav>
+    </div>
+
+    <div class="footer__line"></div>
+
+    <div class="footer__copy">
+      <a href="#!" class="footer__copy-logo">
+        <img src="./images/dist/logo-footer.svg" alt="Elen dan" class="footer__copy-img" />
+      </a>
+      <p class="footer__copy-text">© 2021 ELEN DAN</p>
+    </div>
+  </div>
+</footer>
+
 	<!-- popup добвление в корзину -->
 	<div data-type="modal" id="modalAddBasket" class="modal">
 		<div class="modal__container">
@@ -257,7 +318,8 @@
 	
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	<script src="./js/app.min.js"></script>
+	
+	<script src="./js/app.js"></script>
 
 </body>
-</html>
+</html>   

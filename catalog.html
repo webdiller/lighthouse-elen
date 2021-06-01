@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="./fonts/stylesheet.css" />
     <link rel="preload" as="style" href="./fonts/stylesheet.css" type="text/css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/brazzers-carousel@1.0.1/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.css" />
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/brazzers-carousel@1.0.1/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.css" type="text/css" />
+
 	<!-- <meta property="og:image" content="images/dist/preview.jpg"> -->
 	
 	<link rel="stylesheet" href="css/style.css" />
@@ -107,22 +110,17 @@
           <p class="custom-select__title">Выберите размер <img src="./images/dist/arrow-down_grey.svg" alt="Выберите размер" class="custom-select__icon"></p>
         </div>
         <div class="catalog-items">
-  <div class="catalog-items__wrapper">
+  <div id="catalogItems" class="catalog-items__wrapper">
     <div class="catalog-items__item">
-      <div class="catalog-items__images">
-        <picture class="catalog-items__picture">
-          <source srcset="./images/dist/catalog-item@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/catalog-item@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/catalog-item@2x.jpg" media="(min-width: 991px)" />
-          <img class="catalog-items__picture-img" src="./images/dist/catalog-item@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
+      <div class="catalog-items__img-wrapper">
+        <img class="catalog-items__img" src="./images/dist/catalog-item@4x.jpg" alt="Миди-платье с вышивкой" />
       </div>
 
       <div class="catalog-items__actions">
-        <span class="catalog-items__action catalog-items__action_active"></span>
-        <div class="catalog-items__action"></div>
-        <div class="catalog-items__action"></div>
-        <div class="catalog-items__action"></div>
+        <span data-src="./images/dist/card1@3x.jpg" class="catalog-items__action active"></span>
+        <span data-src="./images/dist/card2@3x.jpg" class="catalog-items__action"></span>
+        <span data-src="./images/dist/card3@3x.jpg" class="catalog-items__action"></span>
+        <span data-src="./images/dist/card4@3x.jpg" class="catalog-items__action"></span>
       </div>
 
       <div class="catalog-items__top">
@@ -132,35 +130,87 @@
 
       <div class="catalog-items__bottom">
         <p class="catalog-items__bottom-sizes">
-          <span class="catalog-items__size">XS</span>
-          <span class="catalog-items__size">S</span>
-          <span class="catalog-items__size">M</span>
-          <span class="catalog-items__size">L</span>
+          <input checked class="catalog-items__size-input" type="radio" name="sizes" id="sizeXS" />
+          <label class="catalog-items__size-label" for="sizeXS">XS</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeS" />
+          <label class="catalog-items__size-label" for="sizeS">S</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeM" />
+          <label class="catalog-items__size-label" for="sizeM">M</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeL" />
+          <label class="catalog-items__size-label" for="sizeL">L</label>
         </p>
         <p class="catalog-items__bottom-price">7 500 ₽</p>
         <p class="catalog-items__bottom-colors">
-          <span style="color: #ffcd9f;" class="catalog-items__color"></span>
-          <span style="color: #000000;" class="catalog-items__color"></span>
-          <span style="color: #c4c4c4;" class="catalog-items__color"></span>
+          <input checked class="catalog-items__color-input" id="color1" type="radio" name="catalogColor1" />
+          <label for="color1" style="color: #ffcd9f;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color2" type="radio" name="catalogColor1" />
+          <label for="color2" style="color: #000;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color3" type="radio" name="catalogColor1" />
+          <label for="color3" style="color: #c4c4c4;" class="catalog-items__color"></label>
+        </p>
+      </div>
+    </div>
+
+    <div class="catalog-items__item">     
+       <div class="catalog-items__img-wrapper">
+      <img class="catalog-items__img" src="./images/dist/catalog-item@4x.jpg" alt="Миди-платье с вышивкой" />
+    </div>
+
+      <div class="catalog-items__actions">
+        <span data-src="./images/dist/card1@3x.jpg" class="catalog-items__action active"></span>
+        <span data-src="./images/dist/card2@3x.jpg" class="catalog-items__action"></span>
+        <span data-src="./images/dist/card3@3x.jpg" class="catalog-items__action"></span>
+        <span data-src="./images/dist/card4@3x.jpg" class="catalog-items__action"></span>
+      </div>
+
+      <div class="catalog-items__top">
+        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
+        <p class="catalog-items__top-price">7 500 ₽</p>
+      </div>
+
+      <div class="catalog-items__bottom">
+        <p class="catalog-items__bottom-sizes">
+          <input checked class="catalog-items__size-input" type="radio" name="sizes" id="sizeXS2" />
+          <label class="catalog-items__size-label" for="sizeXS2">XS</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeS2" />
+          <label class="catalog-items__size-label" for="sizeS2">S</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeM2" />
+          <label class="catalog-items__size-label" for="sizeM2">M</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeL2" />
+          <label class="catalog-items__size-label" for="sizeL2">L</label>
+        </p>
+        <p class="catalog-items__bottom-price">7 500 ₽</p>
+        <p class="catalog-items__bottom-colors">
+          <input checked class="catalog-items__color-input" id="color4" type="radio" name="catalogColor2" />
+          <label for="color4" style="color: #ffcd9f;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color5" type="radio" name="catalogColor2" />
+          <label for="color5" style="color: #000;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color6" type="radio" name="catalogColor2" />
+          <label for="color6" style="color: #c4c4c4;" class="catalog-items__color"></label>
         </p>
       </div>
     </div>
 
     <div class="catalog-items__item">
-      <div class="catalog-items__images">
-        <picture class="catalog-items__picture">
-          <source srcset="./images/dist/catalog-item@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/catalog-item@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/catalog-item@2x.jpg" media="(min-width: 991px)" />
-          <img class="catalog-items__picture-img" src="./images/dist/catalog-item@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
+      <div class="catalog-items__img-wrapper">
+        <img class="catalog-items__img" src="./images/dist/catalog-item@4x.jpg" alt="Миди-платье с вышивкой" />
       </div>
 
       <div class="catalog-items__actions">
-        <span class="catalog-items__action catalog-items__action_active"></span>
-        <span class="catalog-items__action"></span>
-        <span class="catalog-items__action"></span>
-        <span class="catalog-items__action"></span>
+        <span data-src="./images/dist/card1@3x.jpg" class="catalog-items__action active"></span>
+        <span data-src="./images/dist/card2@3x.jpg" class="catalog-items__action"></span>
+        <span data-src="./images/dist/card3@3x.jpg" class="catalog-items__action"></span>
+        <span data-src="./images/dist/card4@3x.jpg" class="catalog-items__action"></span>
       </div>
 
       <div class="catalog-items__top">
@@ -170,35 +220,42 @@
 
       <div class="catalog-items__bottom">
         <p class="catalog-items__bottom-sizes">
-          <span class="catalog-items__size">XS</span>
-          <span class="catalog-items__size">S</span>
-          <span class="catalog-items__size">M</span>
-          <span class="catalog-items__size">L</span>
+          <input checked class="catalog-items__size-input" type="radio" name="sizes" id="sizeXS3" />
+          <label class="catalog-items__size-label" for="sizeXS3">XS</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeS3" />
+          <label class="catalog-items__size-label" for="sizeS3">S</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeM3" />
+          <label class="catalog-items__size-label" for="sizeM3">M</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeL3" />
+          <label class="catalog-items__size-label" for="sizeL3">L</label>
         </p>
         <p class="catalog-items__bottom-price">7 500 ₽</p>
         <p class="catalog-items__bottom-colors">
-          <span style="color: #ffcd9f;" class="catalog-items__color"></span>
-          <span style="color: #000000;" class="catalog-items__color"></span>
-          <span style="color: #c4c4c4;" class="catalog-items__color"></span>
+          <input checked class="catalog-items__color-input" id="color7" type="radio" name="catalogColor3" />
+          <label for="color7" style="color: #ffcd9f;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color8" type="radio" name="catalogColor3" />
+          <label for="color8" style="color: #000;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color9" type="radio" name="catalogColor3" />
+          <label for="color9" style="color: #c4c4c4;" class="catalog-items__color"></label>
         </p>
       </div>
     </div>
 
     <div class="catalog-items__item">
-      <div class="catalog-items__images">
-        <picture class="catalog-items__picture">
-          <source srcset="./images/dist/catalog-item@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/catalog-item@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/catalog-item@2x.jpg" media="(min-width: 991px)" />
-          <img class="catalog-items__picture-img" src="./images/dist/catalog-item@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
+      <div class="catalog-items__img-wrapper">
+        <img class="catalog-items__img" src="./images/dist/catalog-item@4x.jpg" alt="Миди-платье с вышивкой" />
       </div>
 
       <div class="catalog-items__actions">
-        <span class="catalog-items__action catalog-items__action_active"></span>
-        <div class="catalog-items__action"></div>
-        <div class="catalog-items__action"></div>
-        <div class="catalog-items__action"></div>
+        <span data-src="./images/dist/card1@3x.jpg" class="catalog-items__action active"></span>
+        <span data-src="./images/dist/card2@3x.jpg" class="catalog-items__action"></span>
+        <span data-src="./images/dist/card3@3x.jpg" class="catalog-items__action"></span>
+        <span data-src="./images/dist/card4@3x.jpg" class="catalog-items__action"></span>
       </div>
 
       <div class="catalog-items__top">
@@ -208,54 +265,28 @@
 
       <div class="catalog-items__bottom">
         <p class="catalog-items__bottom-sizes">
-          <span class="catalog-items__size">XS</span>
-          <span class="catalog-items__size">S</span>
-          <span class="catalog-items__size">M</span>
-          <span class="catalog-items__size">L</span>
+          <input checked class="catalog-items__size-input" type="radio" name="sizes" id="sizeXS4" />
+          <label class="catalog-items__size-label" for="sizeXS4">XS</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeS4" />
+          <label class="catalog-items__size-label" for="sizeS4">S</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeM4" />
+          <label class="catalog-items__size-label" for="sizeM4">M</label>
+
+          <input class="catalog-items__size-input" type="radio" name="sizes" id="sizeL4" />
+          <label class="catalog-items__size-label" for="sizeL4">L</label>
         </p>
         <p class="catalog-items__bottom-price">7 500 ₽</p>
         <p class="catalog-items__bottom-colors">
-          <span style="color: #ffcd9f;" class="catalog-items__color"></span>
-          <span style="color: #000000;" class="catalog-items__color"></span>
-          <span style="color: #c4c4c4;" class="catalog-items__color"></span>
-        </p>
-      </div>
-    </div>
+          <input checked class="catalog-items__color-input" id="color10" type="radio" name="catalogColor4" />
+          <label for="color10" style="color: #ffcd9f;" class="catalog-items__color"></label>
 
-    <div class="catalog-items__item">
-      <div class="catalog-items__images">
-        <picture class="catalog-items__picture">
-          <source srcset="./images/dist/catalog-item@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/catalog-item@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/catalog-item@2x.jpg" media="(min-width: 991px)" />
-          <img class="catalog-items__picture-img" src="./images/dist/catalog-item@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
-      </div>
+          <input class="catalog-items__color-input" id="color11" type="radio" name="catalogColor4" />
+          <label for="color11" style="color: #000;" class="catalog-items__color"></label>
 
-      <div class="catalog-items__actions">
-        <span class="catalog-items__action catalog-items__action_active"></span>
-        <span class="catalog-items__action"></span>
-        <span class="catalog-items__action"></span>
-        <span class="catalog-items__action"></span>
-      </div>
-
-      <div class="catalog-items__top">
-        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
-        <p class="catalog-items__top-price">7 500 ₽</p>
-      </div>
-
-      <div class="catalog-items__bottom">
-        <p class="catalog-items__bottom-sizes">
-          <span class="catalog-items__size">XS</span>
-          <span class="catalog-items__size">S</span>
-          <span class="catalog-items__size">M</span>
-          <span class="catalog-items__size">L</span>
-        </p>
-        <p class="catalog-items__bottom-price">7 500 ₽</p>
-        <p class="catalog-items__bottom-colors">
-          <span style="color: #ffcd9f;" class="catalog-items__color"></span>
-          <span style="color: #000000;" class="catalog-items__color"></span>
-          <span style="color: #c4c4c4;" class="catalog-items__color"></span>
+          <input class="catalog-items__color-input" id="color12" type="radio" name="catalogColor4" />
+          <label for="color12" style="color: #c4c4c4;" class="catalog-items__color"></label>
         </p>
       </div>
     </div>
@@ -504,8 +535,7 @@
 	
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	
-	<script src="./js/app.js"></script>
+	<script src="./js/app.min.js"></script>
 
 </body>
 </html>

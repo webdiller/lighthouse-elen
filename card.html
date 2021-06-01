@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="./fonts/stylesheet.css" />
     <link rel="preload" as="style" href="./fonts/stylesheet.css" type="text/css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/brazzers-carousel@1.0.1/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.css" />
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/brazzers-carousel@1.0.1/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.css" type="text/css" />
+
 	<!-- <meta property="og:image" content="images/dist/preview.jpg"> -->
 	
 	<link rel="stylesheet" href="css/style.css" />
@@ -59,94 +62,80 @@
 </div>
 <div class="card">
   <div class="card__wrapper">
-    <div class="card__media">
+    <div id="cardThumbnails" class="card__media">
       <div class="card__media-thumbnails">
-        <picture class="card__media-thumbnail-picture">
-          <source srcset="./images/dist/card1@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/card1@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/card1@2x.jpg" media="(min-width: 991px)" />
-          <img class="card__media-thumbnail-img" src="./images/dist/card1@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
-
-        <picture class="card__media-thumbnail-picture">
-          <source srcset="./images/dist/card2@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/card2@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/card2@2x.jpg" media="(min-width: 991px)" />
-          <img class="card__media-thumbnail-img" src="./images/dist/card2@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
-
-        <picture class="card__media-thumbnail-picture">
-          <source srcset="./images/dist/card3@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/card3@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/card3@2x.jpg" media="(min-width: 991px)" />
-          <img class="card__media-thumbnail-img" src="./images/dist/card3@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
-
-        <picture class="card__media-thumbnail-picture">
-          <source srcset="./images/dist/card4@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/card4@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/card4@2x.jpg" media="(min-width: 991px)" />
-          <img class="card__media-thumbnail-img" src="./images/dist/card4@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
-
-        <picture class="card__media-thumbnail-picture">
-          <source srcset="./images/dist/card5@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/card5@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/card5@2x.jpg" media="(min-width: 991px)" />
-          <img class="card__media-thumbnail-img" src="./images/dist/card5@1x.jpg" alt="Миди-платье с вышивкой" />
-        </picture>
+        <img class="card__media-thumbnail-img" src="./images/dist/card1@4x.jpg" alt="Миди-платье с вышивкой" />
+        <img class="card__media-thumbnail-img" src="./images/dist/card2@4x.jpg" alt="Миди-платье с вышивкой" />
+        <img class="card__media-thumbnail-img" src="./images/dist/card3@4x.jpg" alt="Миди-платье с вышивкой" />
+        <img class="card__media-thumbnail-img" src="./images/dist/card4@4x.jpg" alt="Миди-платье с вышивкой" />
+        <img class="card__media-thumbnail-img" src="./images/dist/card5@4x.jpg" alt="Миди-платье с вышивкой" />
       </div>
       <div class="card__media-main">
-        <div class="card__media-main-top">
-          <picture class="card__media-main-picture">
-            <source srcset="./images/dist/card-main@4x.jpg" media="(min-width: 1920px)" />
-            <source srcset="./images/dist/card-main@3x.jpg" media="(min-width: 1400px)" />
-            <source srcset="./images/dist/card-main@2x.jpg" media="(min-width: 991px)" />
-            <img class="card__media-main-img" src="./images/dist/card-main@1x.jpg" alt="Миди-платье с вышивкой" />
-          </picture>
+        <div id="cardThumbnailsMain" class="card__media-main-top">
+          <img id="cardThumbnailsMainImg" class="card__media-main-img" src="./images/dist/card-main@4x.jpg" alt="Миди-платье с вышивкой" />
         </div>
-        <div class="card__media-main-bottom">
-          <picture class="card__media-main-picture">
-            <source srcset="./images/dist/card-main@4x.jpg" media="(min-width: 1920px)" />
-            <source srcset="./images/dist/card-main@3x.jpg" media="(min-width: 1400px)" />
-            <source srcset="./images/dist/card-main@2x.jpg" media="(min-width: 991px)" />
-            <img class="card__media-main-img" src="./images/dist/card-main@1x.jpg" alt="Миди-платье с вышивкой" />
-          </picture>
+        <div id="cardThumbnailsBottom" class="card__media-main-bottom">
+          <img id="cardThumbnailsBottomImg" class="card__media-main-img" src="./images/dist/card-main@4x.jpg" alt="Миди-платье с вышивкой" />
         </div>
       </div>
     </div>
-    <div class="card__content">
+    <form class="card__content">
       <div class="numbers2 card__content-category">R</div>
       <div class="card__content-price">7 500 ₽</div>
       <div class="card__content-colors">
         <p class="card__content-color-title">Цвет:</p>
-        <span style="color: #ffcd9f;" class="card__content-color"></span>
-        <span style="color: #000000;" class="card__content-color"></span>
+
+        <input checked class="card__content-color-input" id="color1" type="radio" name="cardColor" />
+        <label for="color1" style="color: #ffcd9f;" class="card__content-color"></label>
+
+        <input class="card__content-color-input" id="color2" type="radio" name="cardColor" />
+        <label for="color2" style="color: #000;" class="card__content-color"></label>
       </div>
       <div class="card__content-sizes">
         <p class="card__content-sizes-title">размер:</p>
-        <span class="card__content-size card__content-size_active">XS</span>
-        <span class="card__content-size">S</span>
-        <span class="card__content-size">S</span>
-        <span class="card__content-size">l</span>
+
+        <input checked class="card__content-size-input" type="radio" name="sizes" id="sizeXS" />
+        <label class="card__content-size-label" for="sizeXS">XS</label>
+
+        <input class="card__content-size-input" type="radio" name="sizes" id="sizeS" />
+        <label class="card__content-size-label" for="sizeS">S</label>
+
+        <input class="card__content-size-input" type="radio" name="sizes" id="sizeM" />
+        <label class="card__content-size-label" for="sizeM">M</label>
+
+        <input class="card__content-size-input" type="radio" name="sizes" id="sizeL" />
+        <label class="card__content-size-label" for="sizeL">L</label>
       </div>
       <button class="card__content-guide">гид размеров <img src="./images/dist/icon-arrow-wide_grey.svg" alt="гид размеров" class="card__content-guide-icon" /></button>
-      <button data-type="callModal" data-trigger="modalAddBasket" class="btn btn_black card__content-add-btn">в корзину</button>
-      <div class="card__content-tabs">
-        <button class="card__content-tab card__content-tab_active">Детали</button>
-        <button class="card__content-tab">Замеры</button>
-        <button class="card__content-tab">Доставка</button>
-        <button class="card__content-tab">Уход</button>
+      <button type="button" data-type="callModal" data-trigger="modalAddBasket" class="btn btn_black card__content-add-btn">в корзину</button>
+      <div id="tabs" class="tabs tabs__content-tabs">
+        <div class="tabs__header">
+          <button type="button" data-tab="details" class="tabs__header-tab active">Детали</button>
+          <button type="button" data-tab="sizes" class="tabs__header-tab">Замеры</button>
+          <button type="button" data-tab="delivery" class="tabs__header-tab">Доставка</button>
+          <button type="button" data-tab="care" class="tabs__header-tab">Уход</button>
+        </div>
+        <div class="tabs__body">
+          <div data-tab-el id="details" class="tabs__body-item active">
+            <p>Белое платье с ажурной вышивкой из хлопка. Дополнительные детали: короткие пышные рукава, ассиметричный низ благодаря драпировке на талии.</p>
+            <br />
+            <p>
+              Состав: 100% Хлопок. <br />
+              Подклад: 100% Полиэстер
+            </p>
+          </div>
+          <div data-tab-el id="sizes" class="tabs__body-item">
+            <p>Описание размеров</p>
+          </div>
+          <div data-tab-el id="delivery" class="tabs__body-item">
+            <p>Описание доставки</p>
+          </div>
+          <div data-tab-el id="care" class="tabs__body-item">
+            <p>Описание ухода</p>
+          </div>
+        </div>
       </div>
-      <div class="card__content-tab-description">
-        <p>Белое платье с ажурной вышивкой из хлопка. Дополнительные детали: короткие пышные рукава, ассиметричный низ благодаря драпировке на талии.</p>
-        <br>
-        <p>
-          Состав: 100% Хлопок. <br />
-          Подклад: 100% Полиэстер
-        </p>
-      </div>
-    </div>
+    </form>
   </div>
 </div>
 
@@ -449,8 +438,7 @@
 	
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	
-	<script src="./js/app.js"></script>
+	<script src="./js/app.min.js"></script>
 
 </body>
 </html>
