@@ -5,8 +5,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const modals = document.querySelectorAll('[data-type="modal"]');
     const counters = document.querySelectorAll('[data-type="counter"]');
     const menu = document.getElementById("menu");
+    const menuClose = document.getElementById("menuClose");
     const topNav = document.getElementById("topNav");
     const menuBtn = document.getElementById("menuBtn");
+    const search = document.getElementById("search");
+    const callSearch = document.getElementById("callSearch");
+    const searchReset = document.getElementById("searchReset");
+
+    if (search && callSearch) {
+      callSearch.addEventListener('click', function(e) {
+        search.classList.toggle('active')
+        if(window.innerWidth <= 1100) {
+          document.body.classList.toggle('hiddenY')
+        }
+      }) 
+      searchReset.addEventListener('click', function(e) {
+        search.classList.remove('active')
+        document.body.classList.remove('hiddenY')
+      }) 
+    }
 
     if (counters && counters.length > 0) {
       let totalPrice = document.querySelector("#basketTotal span").innerHTML.trim();
@@ -36,10 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    if (menu && topNav && menuBtn) {
+    if (menu && topNav && menuBtn && menuClose) {
       menuBtn.addEventListener("click", function () {
         menu.classList.toggle("menu_active");
         topNav.classList.toggle("top-nav_active");
+        search.classList.toggle("active-menu");
+        document.body.classList.toggle('hiddenY');
+      });
+      menuClose.addEventListener("click", function () {
+        menu.classList.remove("menu_active");
+        topNav.classList.remove("top-nav_active");
+        search.classList.remove("active-menu");
+        document.body.classList.remove('hiddenY');
       });
     }
 
@@ -83,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ABOUT PAGE
   const aboutpage = () => {
     (() => {
+      // textWithSlider
       const currentSlideEl = document.getElementById("currentSlide");
       const allSlidesEl = document.getElementById("allSlides");
       const loop = false;
@@ -115,6 +141,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 allSlidesEl.innerHTML = count;
               }
             }
+          }
+        }
+      });
+
+      // topGoodsSlider
+      var topGoodsSlider = new Swiper("#topGoodsSlider", {
+        slidesPerView: 5.1,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+          nextEl: ".top-goods__arrows .top-goods__arrow.top-goods__arrow_next",
+          prevEl: ".top-goods__arrows .top-goods__arrow.top-goods__arrow_prev"
+        },
+        on: {
+          init: function () {
+          },
+          slideChange: function () {
+            
           }
         }
       });

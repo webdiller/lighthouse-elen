@@ -31,8 +31,8 @@
 <div id="topNav" class="top-nav">
   <div class="top-nav__wrapper">
     <button id="menuBtn" class="top-nav__menu">
-      <img src="./images/dist/menu-bar.svg" alt="Меню" class="top-nav__menu-img">
-      <img src="./images/dist/menu-close.svg" alt="Меню" class="top-nav__menu-img">
+      <img src="./images/dist/menu-bar.svg" alt="Меню" class="top-nav__menu-img" />
+      <img src="./images/dist/menu-close.svg" alt="Меню" class="top-nav__menu-img" />
     </button>
 
     <a href="/" class="top-nav__logo">
@@ -49,10 +49,135 @@
     </nav>
 
     <nav class="top-nav__actions">
-      <button data-type="callModal" data-trigger="modalLogin" class="top-nav__action-item"><img src="./images/dist/icon-user.svg" alt="" class="top-nav__action-img" /></button>
-      <a href="#!" class="top-nav__action-item"><img src="./images/dist/icon-serach.svg" alt="" class="top-nav__action-img" /></a>
-      <a href="/basket.html" class="top-nav__action-item"><img src="./images/dist/icon-basket.svg" alt="" class="top-nav__action-img" /></a>
+      <button data-type="callModal" data-trigger="modalLogin" class="top-nav__action-item top-nav__action-item_login"><img src="./images/dist/icon-user.svg" alt="" class="top-nav__action-img" />  </button>
+      <button id="callSearch" class="top-nav__action-item"><img src="./images/dist/icon-serach.svg" alt="" class="top-nav__action-img" /></button>
+      <a href="/basket.html" class="top-nav__action-item"><img src="./images/dist/icon-basket.svg" alt="" class="top-nav__action-img" /><span class="top-nav__action-item-counter">3</span></a>
     </nav>
+
+    <div id="search" class="search">
+      <div class="search__wrapper">
+        
+        <div class="search__form">
+          <button type="button" class="search__loop">
+            <img src="./images/dist/search-icon.svg" alt="Поиск" class="search__loop-icon" />
+          </button>
+          <input placeholder="Поиск" type="text" class="search__input" />
+          <button id="searchReset" type="button" class="search__reset">Отмена</button>
+        </div>
+
+        <div class="search__result">
+          <div class="search__result-header">
+            <p class="search__result-header-title">По категориям</p>
+            <a href="#" class="search__result-header-item">Юбки <span class="search__result-header-text">перейти</span></a>
+          </div>
+
+          <div class="search__result-body">
+            <p class="search__result-body-title">По товарам</p>
+            <nav class="search__result-list">
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a><a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -249,6 +374,142 @@
   </div>
 </div>
 
+<div class="top-goods">
+  <div class="top-goods__wrapper">
+    <p class="title title_h1 top-goods__title">
+      top <br />
+      товары
+    </p>
+    <div class="top-goods__main">
+      <div id="topGoodsSlider" class="top-goods__slider swiper-container">
+        <div class="swiper-wrapper">
+          <div class="top-goods__item swiper-slide">
+            <img class="top-goods__img" src="./images/dist/top-goods1.jpg" alt="Мини-юбка с эффектом оторванного пояса AMOUR" />
+            <div class="top-goods__content">
+              <p class="top-goods__name">Мини-юбка с эффектом оторванного пояса AMOUR</p>
+              <div class="top-goods__price">
+                <p class="top-goods__price-current">7 500 ₽</p>
+                <p class="top-goods__price-old">10 500 ₽</p>
+              </div>
+              <a href="/catalog.html" class="top-goods__link">перейти в каталог</a>
+            </div>
+          </div>
+
+          <div class="top-goods__item swiper-slide">
+            <img class="top-goods__img" src="./images/dist/top-goods2.jpg" alt="Мини-юбка с эффектом оторванного пояса AMOUR" />
+            <div class="top-goods__content">
+              <p class="top-goods__name">Мини-юбка с эффектом оторванного пояса AMOUR</p>
+              <div class="top-goods__price">
+                <p class="top-goods__price-current">7 500 ₽</p>
+                <p class="top-goods__price-old">10 500 ₽</p>
+              </div>
+              <a href="/catalog.html" class="top-goods__link">перейти в каталог</a>
+            </div>
+          </div>
+
+          <div class="top-goods__item swiper-slide">
+            <img class="top-goods__img" src="./images/dist/top-goods3.jpg" alt="Мини-юбка с эффектом оторванного пояса AMOUR" />
+            <div class="top-goods__content">
+              <p class="top-goods__name">Мини-юбка с эффектом оторванного пояса AMOUR</p>
+              <div class="top-goods__price">
+                <p class="top-goods__price-current">7 500 ₽</p>
+                <p class="top-goods__price-old">10 500 ₽</p>
+              </div>
+              <a href="/catalog.html" class="top-goods__link">перейти в каталог</a>
+            </div>
+          </div>
+
+          <div class="top-goods__item swiper-slide">
+            <img class="top-goods__img" src="./images/dist/top-goods4.jpg" alt="Мини-юбка с эффектом оторванного пояса AMOUR" />
+            <div class="top-goods__content">
+              <p class="top-goods__name">Мини-юбка с эффектом оторванного пояса AMOUR</p>
+              <div class="top-goods__price">
+                <p class="top-goods__price-current">7 500 ₽</p>
+                <p class="top-goods__price-old">10 500 ₽</p>
+              </div>
+              <a href="/catalog.html" class="top-goods__link">перейти в каталог</a>
+            </div>
+          </div>
+
+          <div class="top-goods__item swiper-slide">
+            <img class="top-goods__img" src="./images/dist/top-goods1.jpg" alt="Мини-юбка с эффектом оторванного пояса AMOUR" />
+            <div class="top-goods__content">
+              <p class="top-goods__name">Мини-юбка с эффектом оторванного пояса AMOUR</p>
+              <div class="top-goods__price">
+                <p class="top-goods__price-current">7 500 ₽</p>
+                <p class="top-goods__price-old">10 500 ₽</p>
+              </div>
+              <a href="/catalog.html" class="top-goods__link">перейти в каталог</a>
+            </div>
+          </div>
+
+          <div class="top-goods__item swiper-slide">
+            <img class="top-goods__img" src="./images/dist/top-goods2.jpg" alt="Мини-юбка с эффектом оторванного пояса AMOUR" />
+            <div class="top-goods__content">
+              <p class="top-goods__name">Мини-юбка с эффектом оторванного пояса AMOUR</p>
+              <div class="top-goods__price">
+                <p class="top-goods__price-current">7 500 ₽</p>
+                <p class="top-goods__price-old">10 500 ₽</p>
+              </div>
+              <a href="/catalog.html" class="top-goods__link">перейти в каталог</a>
+            </div>
+          </div>
+          <div class="top-goods__item swiper-slide">
+            <img class="top-goods__img" src="./images/dist/top-goods1.jpg" alt="Мини-юбка с эффектом оторванного пояса AMOUR" />
+            <div class="top-goods__content">
+              <p class="top-goods__name">Мини-юбка с эффектом оторванного пояса AMOUR</p>
+              <div class="top-goods__price">
+                <p class="top-goods__price-current">7 500 ₽</p>
+                <p class="top-goods__price-old">10 500 ₽</p>
+              </div>
+              <a href="/catalog.html" class="top-goods__link">перейти в каталог</a>
+            </div>
+          </div>
+
+          <div class="top-goods__item swiper-slide">
+            <img class="top-goods__img" src="./images/dist/top-goods2.jpg" alt="Мини-юбка с эффектом оторванного пояса AMOUR" />
+            <div class="top-goods__content">
+              <p class="top-goods__name">Мини-юбка с эффектом оторванного пояса AMOUR</p>
+              <div class="top-goods__price">
+                <p class="top-goods__price-current">7 500 ₽</p>
+                <p class="top-goods__price-old">10 500 ₽</p>
+              </div>
+              <a href="/catalog.html" class="top-goods__link">перейти в каталог</a>
+            </div>
+          </div>
+
+          <div class="top-goods__item swiper-slide">
+            <img class="top-goods__img" src="./images/dist/top-goods3.jpg" alt="Мини-юбка с эффектом оторванного пояса AMOUR" />
+            <div class="top-goods__content">
+              <p class="top-goods__name">Мини-юбка с эффектом оторванного пояса AMOUR</p>
+              <div class="top-goods__price">
+                <p class="top-goods__price-current">7 500 ₽</p>
+                <p class="top-goods__price-old">10 500 ₽</p>
+              </div>
+              <a href="/catalog.html" class="top-goods__link">перейти в каталог</a>
+            </div>
+          </div>
+        </div>
+        <div class="top-goods__counter">
+          <p id="currentSlide" class="top-goods__count-current">01</p>
+          <p id="allSlides" class="top-goods__count-all">/ 04</p>
+        </div>
+        <div class="top-goods__arrows">
+          <button class="top-goods__arrow top-goods__arrow_prev">
+            <svg class="top-goods__arrow-img" width="21" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="top-goods__arrow-img-path" d="M.434 6.566a.8.8 0 010-1.132L5.525.344a.8.8 0 111.132 1.13L2.13 6l4.526 4.525a.8.8 0 01-1.132 1.132L.435 6.566zM21 6.8H1V5.2h20v1.6z" fill="#000" />
+            </svg>
+          </button>
+          <button class="top-goods__arrow top-goods__arrow_next">
+            <svg class="top-goods__arrow-img" width="21" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="top-goods__arrow-img-path" d="M20.566 6.566a.8.8 0 000-1.132L15.475.344a.8.8 0 00-1.132 1.13L18.87 6l-4.526 4.525a.8.8 0 001.132 1.132l5.09-5.091zM0 6.8h20V5.2H0v1.6z" fill="#000" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <footer class="footer">
@@ -431,9 +692,11 @@
 	</div> -->
 
 	<div id="menu" class="menu">
+  <img class="menu__bg-icon" src="./images/dist/menu-bg-icon.svg" alt="Каталог">
+  <button id="menuClose" class="menu__close"><img src="./images/dist/menu-close-mobile.svg" alt="Закрыть" class="menu__close-img"></button>
   <div class="menu__wrapper">
     <div class="menu__item menu__item_large">
-        <p class="menu__item-title">Каталог</p>
+        <p class="menu__item-title">Каталог <img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Каталог"></p>
         <nav class="menu__item-list menu__item-list_columns">
             <a href="#" class="menu__item-link">Все товары</a>
             <a href="#" class="menu__item-link menu__item-link_big">SPECIAL SALE</a>
@@ -458,7 +721,7 @@
         </nav>
     </div>
     <div class="menu__item menu__item_small">
-        <p class="menu__item-title">Информация</p>
+        <p class="menu__item-title">Информация <img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Информация"></p>
         <nav class="menu__item-list menu__item-list_info">
             <a href="#" class="menu__item-link">Доставка </a>
             <a href="#" class="menu__item-link">Возврат</a>
@@ -466,7 +729,7 @@
             <a href="#" class="menu__item-link">Контакты</a>
             <a href="#" class="menu__item-link menu__item-link_underline">Личный кабинет</a>
         </nav>        
-        <p class="menu__item-title">Истории</p>
+        <p class="menu__item-title">Истории <img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Истории"></p>
         <nav class="menu__item-list">
             <a href="#" class="menu__item-link">Все истории </a>
             <a href="#" class="menu__item-link menu__item-link_uppercase">A DREAMFULL PARTY</a>
