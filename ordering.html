@@ -11,6 +11,7 @@
 	<meta name="description" content="ElanDan">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width">
 
 	<link rel="icon" href="images/favicon.png">
 
@@ -193,15 +194,19 @@
       <h1 class="title title_h4 ordering__header-title">оформление заказа</h1>
     </div>
 
+    <div class="breadcrumbs breadcrumbs_ordering-mobile">
+      <a href="#" class="breadcrumbs__item breadcrumbs__item_cabinet"> войти в личный кабинет <img src="./images/dist/icon-arrow-right_grey.svg" alt="Главная" class="breadcrumbs__item-img breadcrumbs__item-img_cabinet" /> </a>
+    </div>
+
     <div class="ordering__content">
-      <form class="ordering__fields">
+      <form id="orderingForm" class="ordering__fields">
         <!-- Доставка -->
-        <div class="ordering__field">
+        <div class="ordering__field ordering__field_delivery">
           <p class="numbers2 ordering__field-title">Доставка</p>
 
           <div class="ordering__checkboxes">
             <div class="custom-checkbox ordering__content-checkbox">
-              <input id="orderingDelivery1" checked name="orderingDelivery" type="radio" class="custom-checkbox__input" />
+              <input value="Доставка" id="orderingDelivery1" checked name="orderingDelivery" type="radio" class="custom-checkbox__input" />
               <label for="orderingDelivery1" class="custom-checkbox__label">
                 <span class="custom-checkbox__inner"></span>
                 <span class="custom-checkbox__outer"></span>
@@ -210,7 +215,7 @@
             </div>
 
             <div class="custom-checkbox ordering__content-checkbox">
-              <input id="orderingDelivery2" name="orderingDelivery" type="radio" class="custom-checkbox__input" />
+              <input value="Самовывоз" id="orderingDelivery2" name="orderingDelivery" type="radio" class="custom-checkbox__input" />
               <label for="orderingDelivery2" class="custom-checkbox__label">
                 <span class="custom-checkbox__inner"></span>
                 <span class="custom-checkbox__outer"></span>
@@ -219,12 +224,14 @@
             </div>
           </div>
 
-          <input placeholder="страна" type="text" class="custom-input ordering__input-full" />
-          <input placeholder="город" type="text" class="custom-input ordering__input-full" />
-          <input placeholder="улица" type="text" class="custom-input ordering__input-full" />
-          <div class="ordering__inputs">
-            <input placeholder="дом" type="text" class="custom-input ordering__input-half" />
-            <input placeholder="квартира" type="text" class="custom-input ordering__input-half" />
+          <div class="ordering__delivery-fields">
+            <input placeholder="страна" type="text" class="custom-input ordering__input-full" />
+            <input placeholder="город" type="text" class="custom-input ordering__input-full" />
+            <input placeholder="улица" type="text" class="custom-input ordering__input-full" />
+            <div class="ordering__inputs">
+              <input placeholder="дом" type="text" class="custom-input ordering__input-half" />
+              <input placeholder="квартира" type="text" class="custom-input ordering__input-half" />
+            </div>
           </div>
         </div>
 
@@ -282,8 +289,7 @@
           </div>
         </div>
       </form>
-
-      <div class="ordering__main">
+      <div id="showMainCard" class="ordering__main">
         <div class="ordering__main-items">
           <div class="ordering__main-item">
             <picture class="ordering__main-picture">
@@ -339,6 +345,7 @@
           </div>
         </div>
       </div>
+      <button id="showMainCardBtn" class="ordering__show">Подробности заказа <img src="./images/dist/arrow-down_grey.svg" alt="Подробности заказа" class="ordering__show-img" /></button>
     </div>
   </div>
 </div>
@@ -474,6 +481,7 @@
 		</div>
 	</div>
 
+	<!-- Подпишитесь на новости -->
 	<div id="modalSubscribe" data-type="modal" class="subscribe-modal">
 		<div class="subscribe-modal__wrapper">
 			<button class="subscribe-modal__close"><img src="./images/dist/icon-close.svg" alt="Закрыть" class="subscribe-modal__close-img"></button>
@@ -511,72 +519,307 @@
 		</div>
 	</div>
 
-	<!-- <div class="preloader">
+	<!-- preloader -->
+	<div id="preloader" class="preloader">
 		<div class="preloader__wrapper">
 			<img src="./images/dist/preloader-img.svg" alt="Loading" class="preloader__img">
 			<div class="preloader__status">
 				<p class="preloader__status-title">loading</p>
-				<span class="preloader__status-item"></span>
-				<span class="preloader__status-item"></span>
-				<span class="preloader__status-item"></span>
+				<span class="preloader__status-item preloader__status-item_1"></span>
+				<span class="preloader__status-item preloader__status-item_2"></span>
+				<span class="preloader__status-item preloader__status-item_3"></span>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
+	<!-- Таблица размеров -->
+	<div id="tableSize" data-type="modal" class="table-size">
+		<div class="table-size__wrapper">
+			<div class="table-size__header">
+				<p class="table-size__header-title">Таблица размеров
+				<span class="table-size__header-text">(самнтиметры)</span>
+				</p>
+				<button class="table-size__header-close"><img src="./images/dist/icon-close.svg" alt="Закрыть" class="table-size__header-close-img"></button>
+			</div>
+			<div class="table-size__table">
+				<div class="table-size__row table-size__row_head">
+					<div class="table-size__col">INT</div>
+					<div class="table-size__col">Рост</div>
+					<div class="table-size__col">ОГ</div>
+					<div class="table-size__col">ОТ</div>
+					<div class="table-size__col">ОБ</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+			</div>
+			<p class="title title_h4 table-size__title">Как снимать мерки?</p>
+			<p class="table-size__text">Для того, чтобы правильно выбрать размер,снимите мерки по инструкции ниже:</p>
+			<ul class="table-size__list">
+				<li class="table-size__list-item">Обхват груди измеряется вокруг туловища по самой выступающей линии бюста.</li>
+				<li class="table-size__list-item">Обхват талии измеряется по самой узкой линии талии.</li>
+				<li class="table-size__list-item">Обхват бедер измеряется в области на 20 см ниже талии, по линии максимальной ширины бедер.</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Фильтр / settings для каталога -->
+	<div id="filter" data-type="modal" class="filter">
+		<form class="filter__wrapper">
+			<button type="button" class="filter__header-close"><img src="./images/dist/icon-close.svg" alt="Закрыть" class="filter__header-close-img"></button>
+			<p class="numbers2 filter__title filter__title_price">цена</p>
+			<div class="filter__inputs">
+				<input placeholder="от" type="text" class="custom-input filter__input">
+				<input placeholder="до" type="text" class="custom-input filter__input">
+			</div>			
+			<p class="numbers2 filter__title filter__title_collection">коллекция</p>
+			<div class="filter__collections">
+				<div class="custom-checkbox custom-checkbox_catalog filter__collection">
+					<input id="collection1" checked name="collection" type="checkbox" class="custom-checkbox__input" />
+					<label for="collection1" class="custom-checkbox__label">
+					  <span class="custom-checkbox__inner"></span>
+					  <span class="custom-checkbox__outer"></span>
+					  <span class="custom-checkbox__text">Коллекция 1</span>
+					</label>
+				</div>
+				<div class="custom-checkbox custom-checkbox_catalog filter__collection">
+					<input id="collection2"  name="collection" type="checkbox" class="custom-checkbox__input" />
+					<label for="collection2" class="custom-checkbox__label">
+					  <span class="custom-checkbox__inner"></span>
+					  <span class="custom-checkbox__outer"></span>
+					  <span class="custom-checkbox__text">Коллекция 2</span>
+					</label>
+				</div>
+				<div class="custom-checkbox custom-checkbox_catalog filter__collection">
+					<input id="collection3"  name="collection" type="checkbox" class="custom-checkbox__input" />
+					<label for="collection3" class="custom-checkbox__label">
+					  <span class="custom-checkbox__inner"></span>
+					  <span class="custom-checkbox__outer"></span>
+					  <span class="custom-checkbox__text">Коллекция 3</span>
+					</label>
+				</div>
+			</div>
+			<p class="numbers2 filter__title filter__title_size">Размер</p>
+			<div class="filter__sizes">
+				<div class="filter__sizes-column">
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizexss" name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizexss" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">XXS</span>
+						</label>
+					</div>
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizexs" name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizexs" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">XS</span>
+						</label>
+					</div>
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizes" name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizes" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">S</span>
+						</label>
+					</div>
+				</div>
+				<div class="filter__sizes__column">
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizem"  name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizem" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">M</span>
+						</label>
+					</div>
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizel" name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizel" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">L</span>
+						</label>
+					</div>
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizexl" name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizexl" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">XL</span>
+						</label>
+					</div>
+				</div>
+				
+			</div>
+			<p class="numbers2 filter__title filter__title_color">цвет</p>
+			<div class="filter__colors">
+				<div class="filter__colors-row">
+					<input class="filter__colors-input" id="color#ffcd9f" type="checkbox" name="filterColor">
+					<label for="color#ffcd9f" style="color: #ffcd9f;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#000" type="checkbox" name="filterColor">
+					<label for="color#000" style="color: #000;" class="filter__colors-label"></label>
+
+					<input class="filter__colors-input" id="color#C4C4C4" type="checkbox" name="filterColor">
+					<label for="color#C4C4C4" style="color: #C4C4C4;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#fff" type="checkbox" name="filterColor">
+					<label for="color#fff" style="color: #fff;" class="filter__colors-label filter__colors-label_border"></label>
+
+					<input class="filter__colors-input" id="color#FF0000" type="checkbox" name="filterColor">
+					<label for="color#FF0000" style="color: #FF0000;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#387C02" type="checkbox" name="filterColor">
+					<label for="color#387C02" style="color: #387C02;" class="filter__colors-label"></label>
+				</div>
+				<div class="filter__colors-row">
+					<input class="filter__colors-input" id="color#1BD6FF" type="checkbox" name="filterColor">
+					<label for="color#1BD6FF" style="color: #1BD6FF;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#00109C" type="checkbox" name="filterColor">
+					<label for="color#00109C" style="color: #00109C;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#9C00D2" type="checkbox" name="filterColor">
+					<label for="color#9C00D2" style="color: #9C00D2;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#F600DE" type="checkbox" name="filterColor">
+					<label for="color#F600DE" style="color: #F600DE;" class="filter__colors-label"></label>
+					
+					<input class="filter__colors-input" id="color#FFC700" type="checkbox" name="filterColor">
+					<label for="color#FFC700" style="color: #FFC700;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#7C0202" type="checkbox" name="filterColor">
+					<label for="color#7C0202" style="color: #7C0202;" class="filter__colors-label"></label>
+				</div>
+			</div>
+		</form>
+	</div>
+	
 	<div id="menu" class="menu">
-  <img class="menu__bg-icon" src="./images/dist/menu-bg-icon.svg" alt="Каталог">
-  <button id="menuClose" class="menu__close"><img src="./images/dist/menu-close-mobile.svg" alt="Закрыть" class="menu__close-img"></button>
+  <img class="menu__bg-icon" src="./images/dist/menu-bg-icon.svg" alt="Каталог" />
+  <button id="menuClose" class="menu__close"><img src="./images/dist/menu-close-mobile.svg" alt="Закрыть" class="menu__close-img" /></button>
   <div class="menu__wrapper">
     <div class="menu__item menu__item_large">
-        <p class="menu__item-title">Каталог <img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Каталог"></p>
-        <nav class="menu__item-list menu__item-list_columns">
-            <a href="#" class="menu__item-link">Все товары</a>
-            <a href="#" class="menu__item-link menu__item-link_big">SPECIAL SALE</a>
-            <a href="#" class="menu__item-link">NEW COLLECTION</a>
-            <a href="#" class="menu__item-link">AMOUR</a>
-            <a href="#" class="menu__item-link">ALAKRA</a>
-            <a href="#" class="menu__item-link">Брюки и шорты</a>
-            <a href="#" class="menu__item-link">Верхняя одежда</a>
-            <a href="#" class="menu__item-link">Деним</a>
-            <a href="#" class="menu__item-link">Жакеты</a>
-            <a href="#" class="menu__item-link">Жилеты</a>
-            <a href="#" class="menu__item-link">Кардиганы</a>
-            <a href="#" class="menu__item-link">Костюмы</a>
-            <a href="#" class="menu__item-link menu__item-link_bold">Обувь и аксессуары</a>
-            <a href="#" class="menu__item-link">Платья</a>
-            <a href="#" class="menu__item-link menu__item-link_empty"></a>
-            <a href="#" class="menu__item-link">Рубашки и блузы</a>
-            <a href="#" class="menu__item-link">Толстовки и худи</a>
-            <a href="#" class="menu__item-link">Топы и майки</a>
-            <a href="#" class="menu__item-link">Трикотаж</a>
-            <a href="#" class="menu__item-link">Юбки</a>
-        </nav>
+      <p class="menu__item-title">Каталог <img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Каталог" /></p>
+      <nav class="menu__item-list menu__item-list_columns">
+        <a href="/catalog.html" class="menu__item-link">Все товары</a>
+        <a href="/catalog.html" class="menu__item-link menu__item-link_big">SPECIAL SALE</a>
+        <a href="/catalog.html" class="menu__item-link">NEW COLLECTION</a>
+        <a href="/catalog.html" class="menu__item-link">AMOUR</a>
+        <a href="/catalog.html" class="menu__item-link">ALAKRA</a>
+        <a href="/catalog.html" class="menu__item-link">Брюки и шорты</a>
+        <a href="/catalog.html" class="menu__item-link">Верхняя одежда</a>
+        <a href="/catalog.html" class="menu__item-link">Деним</a>
+        <a href="/catalog.html" class="menu__item-link">Жакеты</a>
+        <a href="/catalog.html" class="menu__item-link">Жилеты</a>
+        <a href="/catalog.html" class="menu__item-link">Кардиганы</a>
+        <a href="/catalog.html" class="menu__item-link">Костюмы</a>
+        <a href="/catalog.html" class="menu__item-link menu__item-link_bold">Обувь и аксессуары</a>
+        <a href="/catalog.html" class="menu__item-link">Платья</a>
+        <a href="/catalog.html" class="menu__item-link menu__item-link_empty"></a>
+        <a href="/catalog.html" class="menu__item-link">Рубашки и блузы</a>
+        <a href="/catalog.html" class="menu__item-link">Толстовки и худи</a>
+        <a href="/catalog.html" class="menu__item-link">Топы и майки</a>
+        <a href="/catalog.html" class="menu__item-link">Трикотаж</a>
+        <a href="/catalog.html" class="menu__item-link">Юбки</a>
+      </nav>
     </div>
     <div class="menu__item menu__item_small">
-        <p class="menu__item-title">Информация <img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Информация"></p>
-        <nav class="menu__item-list menu__item-list_info">
-            <a href="#" class="menu__item-link">Доставка </a>
-            <a href="#" class="menu__item-link">Возврат</a>
-            <a href="#" class="menu__item-link">О нас</a>
-            <a href="#" class="menu__item-link">Контакты</a>
-            <a href="#" class="menu__item-link menu__item-link_underline">Личный кабинет</a>
-        </nav>        
-        <p class="menu__item-title">Истории <img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Истории"></p>
-        <nav class="menu__item-list">
-            <a href="#" class="menu__item-link">Все истории </a>
-            <a href="#" class="menu__item-link menu__item-link_uppercase">A DREAMFULL PARTY</a>
-        </nav>
+      <p class="menu__item-title">Информация <img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Информация" /></p>
+      <nav class="menu__item-list menu__item-list_info">
+        <a href="/catalog.html" class="menu__item-link">Доставка </a>
+        <a href="/catalog.html" class="menu__item-link">Возврат</a>
+        <a href="/catalog.html" class="menu__item-link">О нас</a>
+        <a href="/catalog.html" class="menu__item-link">Контакты</a>
+        <a href="/catalog.html" class="menu__item-link menu__item-link_underline">Личный кабинет</a>
+      </nav>
+      <p class="menu__item-title">Истории<img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Истории" /></p>
+      <nav class="menu__item-list">
+        <a href="/catalog.html" class="menu__item-link">Все истории </a>
+        <a href="/catalog.html" class="menu__item-link menu__item-link_uppercase">A DREAMFULL PARTY</a>
+      </nav>
     </div>
     <div class="menu__item menu__item_image">
-        <picture class="menu__picture">
-          <source srcset="./images/dist/menu@4x.jpg" media="(min-width: 1920px)" />
-          <source srcset="./images/dist/menu@3x.jpg" media="(min-width: 1400px)" />
-          <source srcset="./images/dist/menu@2x.jpg" media="(min-width: 991px)" />
-          <img class="menu__img" src="./images/dist/menu@1x.jpg" alt="Брюки-бананы со стрелками" />
-        </picture>
-      </div>
+      <picture class="menu__picture">
+        <source srcset="./images/dist/menu@4x.jpg" media="(min-width: 1920px)" />
+        <source srcset="./images/dist/menu@3x.jpg" media="(min-width: 1400px)" />
+        <source srcset="./images/dist/menu@2x.jpg" media="(min-width: 991px)" />
+        <img class="menu__img" src="./images/dist/menu@1x.jpg" alt="Брюки-бананы со стрелками" />
+      </picture>
     </div>
+  </div>
+  <div class="menu-banner">
+    <img src="./images/dist/menu-banner-img.jpg" alt="special sale" class="menu-banner__image" />
+    <div class="menu-banner__wrapper">
+      <p class="menu-banner__top-text">special sale</p>
+      <p class="menu-banner__number">-20%</p>
+      <p class="menu-banner__subtext">
+        на все платья на бретелях <br />
+        из любой коллекции
+      </p>
+      <a href="#" class="menu-banner__link">Смотреть </a>
+    </div>
+  </div>
+  <div class="menu-contact">
+    <div class="menu-contact__item">
+      <p class="menu-contact__title">позвоните нам</p>
+      <p class="menu-contact__subtitle">Контактный телефон</p>
+      <a href="tel:+79683660033" class="menu-contact__subtitle">+7 968 366 00 33</a>
+    </div>
+    <div class="menu-contact__item">
+      <p class="menu-contact__title">наш бутик</p>
+      <p class="menu-contact__subtitle">
+        Москва, <br />
+        Набережная Тараса Шевченко, <br />
+        дом 3, корпус 3
+      </p>
+    </div>
+  </div>
 </div>
+
 	
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
