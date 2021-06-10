@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const preloader = document.getElementById("preloader");
     const preloaderBtn = document.getElementById("preloaderBtn");
 
+
     if (preloader && preloaderBtn) {
       preloaderBtn.addEventListener("click", function (e) {
         preloader.classList.toggle("active");
@@ -143,11 +144,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // textWithSlider
       const currentSlideEl = document.getElementById("currentSlide");
       const allSlidesEl = document.getElementById("allSlides");
-      const loop = false;
       var textWithSlider = new Swiper("#textWithSlider", {
         slidesPerView: 3,
         spaceBetween: 30,
-        loop: loop,
+        loop: false,
         navigation: {
           nextEl: ".text-with-slider__arrows .text-with-slider__arrow.text-with-slider__arrow_next",
           prevEl: ".text-with-slider__arrows .text-with-slider__arrow.text-with-slider__arrow_prev"
@@ -164,20 +164,18 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         on: {
           init: function () {
-            const count = this.slides.length;
-            const active = this.activeIndex;
-            this.slideTo(1);
             if (currentSlideEl && allSlidesEl) {
-              currentSlideEl.innerHTML = this.activeIndex;
-              allSlidesEl.innerHTML = `/ ${this.slides.length}`;
+              const zeroPad = (num, places) => String(num).padStart(places, '0')
+              currentSlideEl.innerHTML = zeroPad(1, 2);
+              allSlidesEl.innerHTML = '/ ' + zeroPad(this.slides.length, 2);
             }
           },
           slideChange: function () {
-            const count = this.slides.length;
-            const active = this.activeIndex;
             if (currentSlideEl && allSlidesEl) {
-              currentSlideEl.innerHTML = this.activeIndex + 1;
-              allSlidesEl.innerHTML = `/ ${this.slides.length}`;
+              const zeroPad = (num, places) => String(num).padStart(places, '0')
+              currentSlideEl.innerHTML = zeroPad(this.activeIndex + 1, 2);
+              allSlidesEl.innerHTML = '/ ' + zeroPad(this.slides.length, 2);
+              
             }
           }
         }
@@ -185,9 +183,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // topGoodsSlider
       var topGoodsSlider = new Swiper("#topGoodsSlider", {
-        slidesPerView: 5.1,
+        slidesPerView: 5.15,
         spaceBetween: 20,
-        loop: true,
+        loop: false,
         navigation: {
           nextEl: ".top-goods__arrows .top-goods__arrow.top-goods__arrow_next",
           prevEl: ".top-goods__arrows .top-goods__arrow.top-goods__arrow_prev"
@@ -233,15 +231,17 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         on: {
           init: function () {
+            const zeroPad = (num, places) => String(num).padStart(places, '0')
             const count = this.slides.length;
             const active = this.activeIndex;
 
             const currentSlide = document.querySelector("#aboutSlider .swiper-slide-active img");
 
-            currentSlideEl.innerHTML = this.activeIndex + 1;
-            allSlidesEl.innerHTML = `/ ${this.slides.length}`;
+            currentSlideEl.innerHTML = zeroPad(1, 2);
+            allSlidesEl.innerHTML = '/ ' + zeroPad(this.slides.length, 2);
           },
           transitionEnd: function () {
+            const zeroPad = (num, places) => String(num).padStart(places, '0')
             // images
             const currentSlide = document.querySelector("#aboutSlider .swiper-slide-active img");
 
@@ -257,12 +257,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 500);
 
             // counter
-            currentSlideEl.innerHTML = this.activeIndex;
-            allSlidesEl.innerHTML = `/ ${this.slides.length}`;
+            currentSlideEl.innerHTML = zeroPad(this.activeIndex + 1, 2);
+            allSlidesEl.innerHTML = '/ ' + zeroPad(this.slides.length, 2);
 
             if (currentSlideEl && allSlidesEl) {
-              currentSlideEl.innerHTML = this.activeIndex + 1;
-              allSlidesEl.innerHTML = `/ ${this.slides.length}`;
+              currentSlideEl.innerHTML = zeroPad(this.activeIndex + 1, 2);
+              allSlidesEl.innerHTML = '/ ' + zeroPad(this.slides.length, 2);
             }
           }
         }
@@ -387,18 +387,48 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   orderingPage();
 
-  const cabinetOrdersPage = () => {
-    const order__header = document.querySelectorAll('.order__header');
+  const cabinetPageAndCabinetOrdersPage = () => {
+    const order__header = document.querySelectorAll(".order__header");
+    const ordersButtons = document.querySelectorAll("[data-id]");
+    const orderItems = document.querySelectorAll(".main-orders__item");
+    const orders = document.getElementById("orders");
+    const cabinetItems = document.querySelectorAll("#cabinetItems .cabinet__item-title");
+
+    if (cabinetItems && window.innerWidth <= 991) {
+      cabinetItems.forEach(item => {
+        item.addEventListener("click", function () {
+          cabinetItems.forEach(el => {
+            el.classList.toggle("hidden");
+          });
+          this.classList.toggle("active");
+          this.classList.toggle("hidden");
+        });
+      });
+    }
+
+    if (orders && ordersButtons && orderItems && window.innerWidth >= 992) {
+      ordersButtons.forEach(item => {
+        item.addEventListener("click", function () {
+          ordersButtons.forEach(el => el.classList.remove("active"));
+          orderItems.forEach(el => el.classList.remove("active"));
+          this.classList.add("active");
+          document.getElementById(this.dataset.id).classList.add("active");
+        });
+      });
+    }
+
     if (order__header && window.innerWidth <= 991) {
-      if(order__header.length >= 0) {
-        order__header.forEach(item=>{
-          item.addEventListener('click', function(e){
-            item.parentElement.classList.toggle('order_active');
-            item.nextElementSibling.classList.toggle('active');
-          })
-        })
+      if (order__header.length >= 0) {
+        order__header.forEach(item => {
+          item.parentElement.classList.remove("active");
+          item.nextElementSibling.classList.remove("active");
+          item.addEventListener("click", function (e) {
+            item.parentElement.classList.toggle("active");
+            item.nextElementSibling.classList.toggle("active");
+          });
+        });
       }
     }
-  } 
-  cabinetOrdersPage();
+  };
+  cabinetPageAndCabinetOrdersPage();
 });
