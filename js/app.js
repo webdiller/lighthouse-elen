@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const preloader = document.getElementById("preloader");
     const preloaderBtn = document.getElementById("preloaderBtn");
 
-
     if (preloader && preloaderBtn) {
       preloaderBtn.addEventListener("click", function (e) {
         preloader.classList.toggle("active");
@@ -165,17 +164,16 @@ document.addEventListener("DOMContentLoaded", () => {
         on: {
           init: function () {
             if (currentSlideEl && allSlidesEl) {
-              const zeroPad = (num, places) => String(num).padStart(places, '0')
+              const zeroPad = (num, places) => String(num).padStart(places, "0");
               currentSlideEl.innerHTML = zeroPad(1, 2);
-              allSlidesEl.innerHTML = '/ ' + zeroPad(this.slides.length, 2);
+              allSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
             }
           },
           slideChange: function () {
             if (currentSlideEl && allSlidesEl) {
-              const zeroPad = (num, places) => String(num).padStart(places, '0')
+              const zeroPad = (num, places) => String(num).padStart(places, "0");
               currentSlideEl.innerHTML = zeroPad(this.activeIndex + 1, 2);
-              allSlidesEl.innerHTML = '/ ' + zeroPad(this.slides.length, 2);
-              
+              allSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
             }
           }
         }
@@ -231,17 +229,17 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         on: {
           init: function () {
-            const zeroPad = (num, places) => String(num).padStart(places, '0')
+            const zeroPad = (num, places) => String(num).padStart(places, "0");
             const count = this.slides.length;
             const active = this.activeIndex;
 
             const currentSlide = document.querySelector("#aboutSlider .swiper-slide-active img");
 
             currentSlideEl.innerHTML = zeroPad(1, 2);
-            allSlidesEl.innerHTML = '/ ' + zeroPad(this.slides.length, 2);
+            allSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
           },
           transitionEnd: function () {
-            const zeroPad = (num, places) => String(num).padStart(places, '0')
+            const zeroPad = (num, places) => String(num).padStart(places, "0");
             // images
             const currentSlide = document.querySelector("#aboutSlider .swiper-slide-active img");
 
@@ -258,11 +256,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // counter
             currentSlideEl.innerHTML = zeroPad(this.activeIndex + 1, 2);
-            allSlidesEl.innerHTML = '/ ' + zeroPad(this.slides.length, 2);
+            allSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
 
             if (currentSlideEl && allSlidesEl) {
               currentSlideEl.innerHTML = zeroPad(this.activeIndex + 1, 2);
-              allSlidesEl.innerHTML = '/ ' + zeroPad(this.slides.length, 2);
+              allSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
             }
           }
         }
@@ -318,6 +316,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // CATALOG PAGE
   const catalogPage = () => {
     const items = document.querySelectorAll("#catalogItems .catalog-items__item");
+    const catalogFilter = document.getElementById("catalogFilter");
+
+    if (window.location.pathname.includes("catalog")) {
+      var h = document.documentElement,
+        b = document.body,
+        st = "scrollTop",
+        sh = "scrollHeight";
+
+      const catchScroll = () => {
+        console.log('scroll');
+        
+      };
+
+      window.addEventListener("scroll", catchScroll());
+    }
+
+    if (catalogFilter) {
+      catalogFilter.addEventListener("click", function (e) {
+        this.classList.toggle("active");
+      });
+    }
 
     if (items) {
       items.forEach(i => {

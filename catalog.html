@@ -186,16 +186,80 @@
 </div>
 
 
-        <div data-type="callModal" data-trigger="filter" class="settings catalog__settings">
-          <p class="settings__title">532 товара</p>
-          <button class="settings__button"><img src="./images/dist/icon-settings.svg" alt="Товары" class="settings__button-img"></button>
-        </div>
 
         <div class="custom-select catalog__custom-select">
-          <p  data-type="callModal" data-trigger="filter" class="custom-select__title">Выберите размер <img src="./images/dist/arrow-down_grey.svg" alt="Выберите размер" class="custom-select__icon"></p>
+          <div id="catalogFilter" class="custom-select__title-wrapper">
+            <div class="custom-select__title-desktop">
+              <p class="custom-select__title">Выберите размер <img src="./images/dist/arrow-down_grey.svg" alt="Выберите размер" class="custom-select__title-icon"></p>
+            </div>
+            <div class="custom-select__title-mobile">
+              <p class="custom-select__count">532 товара <img src="./images/dist/menu-close-mobile.svg" alt="Выберите размер" class="custom-select__count-icon"></p>
+            </div>
+          </div>
+          <form class="catalog__form">
+
+            <div class="custom-checkbox catalog__form-select">
+              <input checked value="Выберите размер" id="XXS" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="XXS" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">XXS</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox catalog__form-select">
+              <input value="Выберите размер" id="XS" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="XS" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">XS</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox catalog__form-select">
+              <input value="Выберите размер" id="S" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="S" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">S</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox catalog__form-select">
+              <input value="Выберите размер" id="M" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="M" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">M</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox catalog__form-select">
+              <input value="Выберите размер" id="L" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="L" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">L</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox catalog__form-select">
+              <input value="Выберите размер" id="XL" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="XL" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">XL</span>
+              </label>
+            </div>
+
+            <button class="catalog__form-submit">применить</button>
+
+          </form>
         </div>
+
         <div class="catalog-items">
   <div id="catalogItems" class="catalog-items__wrapper">
+    
     <div class="catalog-items__item">
       <div class="catalog-items__img-wrapper">
         <img class="catalog-items__img" src="./images/dist/catalog-item@4x.jpg" alt="Миди-платье с вышивкой" />
@@ -375,6 +439,7 @@
         </p>
       </div>
     </div>
+
     <div class="catalog-items__item">
       <div class="catalog-items__img-wrapper">
         <img class="catalog-items__img" src="./images/dist/catalog-item@4x.jpg" alt="Миди-платье с вышивкой" />
@@ -554,7 +619,6 @@
         </p>
       </div>
     </div>
-
 
   </div>
   <div class="catalog-items__show-more">
