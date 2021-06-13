@@ -242,12 +242,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const zeroPad = (num, places) => String(num).padStart(places, "0");
             // images
             const currentSlide = document.querySelector("#aboutSlider .swiper-slide-active img");
+            const nextEl = document.querySelector("#aboutSlider .swiper-slide-active");
+
 
             leftImgWrapper.classList.add("changing");
             rightImgWrapper.classList.add("changing");
             setTimeout(() => {
               leftImg.src = currentSlide.src;
-              rightImg.src = currentSlide.src;
+              rightImg.src = nextEl.nextElementSibling.querySelector("img").src;
             }, 350);
             setTimeout(() => {
               leftImgWrapper.classList.remove("changing");
