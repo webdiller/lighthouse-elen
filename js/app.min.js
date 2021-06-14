@@ -180,8 +180,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       // topGoodsSlider
+
+      const tgcurrentSlideEl = document.getElementById("tgcurrentSlide");
+      const tgallSlidesEl = document.getElementById("tgallSlides");
+
+      const topGoodsCurrentName = document.getElementById('topGoodsCurrentName');
+      const topGoodsCurrentPriceNew = document.getElementById('topGoodsCurrentPriceNew');
+      const topGoodsCurrentPriceOld = document.getElementById('topGoodsCurrentPriceOld');
+      const topGoodsCurrentLink = document.getElementById('topGoodsCurrentLink');
+
       var topGoodsSlider = new Swiper("#topGoodsSlider", {
-        slidesPerView: 5.15,
+        slidesPerView: 6.1,
         spaceBetween: 20,
         loop: false,
         navigation: {
@@ -189,8 +198,56 @@ document.addEventListener("DOMContentLoaded", () => {
           prevEl: ".top-goods__arrows .top-goods__arrow.top-goods__arrow_prev"
         },
         on: {
-          init: function () {},
-          slideChange: function () {}
+          afterInit: function () {
+            this.slideTo(1);
+
+            const zeroPad = (num, places) => String(num).padStart(places, "0");
+            tgcurrentSlideEl.innerHTML = zeroPad(1, 2);
+            tgallSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
+
+            let currentWrapper = document.getElementById("currentWrapper");
+            let currentImg = document.querySelector("#currentWrapper img");
+            currentWrapper.classList.add("changing");
+
+            let currentEl = document.querySelector("#topGoodsSlider .swiper-slide-active");
+            let {name, link, priceNew, priceOld} = currentEl.dataset;
+            topGoodsCurrentName.innerHTML = name;
+            topGoodsCurrentPriceNew.innerHTML = priceNew;
+            topGoodsCurrentPriceOld.innerHTML = priceOld;
+            topGoodsCurrentLink.href = link;
+
+            setTimeout(() => {
+              currentImg.src = document.querySelector("#topGoodsSlider .swiper-slide-active").previousElementSibling.querySelector("img").src;
+            }, 300);
+            setTimeout(() => {
+              currentWrapper.classList.remove("changing");
+            }, 400);
+          },
+          transitionEnd: function () {
+            let currentWrapper = document.getElementById("currentWrapper");
+            let currentImg = document.querySelector("#currentWrapper img");
+            currentWrapper.classList.add("changing");
+
+            const zeroPad = (num, places) => String(num).padStart(places, "0");
+            tgcurrentSlideEl.innerHTML = zeroPad(this.activeIndex + 1, 2);
+            tgallSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
+
+            let currentEl = document.querySelector("#topGoodsSlider .swiper-slide-active");
+            let {name, link, priceNew, priceOld} = currentEl.dataset;
+
+            topGoodsCurrentName.innerHTML = name;
+            topGoodsCurrentPriceNew.innerHTML = priceNew;
+            topGoodsCurrentPriceOld.innerHTML = priceOld;
+            topGoodsCurrentLink.href = link;
+
+            setTimeout(() => {
+              currentImg.src = document.querySelector("#topGoodsSlider .swiper-slide-active").previousElementSibling.querySelector("img").src;
+            }, 300);
+            setTimeout(() => {
+              currentWrapper.classList.remove("changing");
+            }, 400);
+          },
+          beforeResize: function () {}
         }
       });
     })();
@@ -243,7 +300,6 @@ document.addEventListener("DOMContentLoaded", () => {
             // images
             const currentSlide = document.querySelector("#aboutSlider .swiper-slide-active img");
             const nextEl = document.querySelector("#aboutSlider .swiper-slide-active");
-
 
             leftImgWrapper.classList.add("changing");
             rightImgWrapper.classList.add("changing");
@@ -327,8 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sh = "scrollHeight";
 
       const catchScroll = () => {
-        console.log('scroll');
-        
+        console.log("scroll");
       };
 
       window.addEventListener("scroll", catchScroll());
