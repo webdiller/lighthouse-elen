@@ -197,6 +197,20 @@ document.addEventListener("DOMContentLoaded", () => {
           nextEl: ".top-goods__arrows .top-goods__arrow.top-goods__arrow_next",
           prevEl: ".top-goods__arrows .top-goods__arrow.top-goods__arrow_prev"
         },
+        breakpoints: {
+          0: {
+            slidesPerView: 4.9,
+            spaceBetween: 6,
+          },
+          576: {
+            slidesPerView: 5.1,
+            spaceBetween: 6,
+          },
+          991: {
+            slidesPerView: 6.1,
+            spaceBetween: 20,
+          }
+        },
         on: {
           afterInit: function () {
             this.slideTo(1);
@@ -247,7 +261,6 @@ document.addEventListener("DOMContentLoaded", () => {
               currentWrapper.classList.remove("changing");
             }, 400);
           },
-          beforeResize: function () {}
         }
       });
     })();
