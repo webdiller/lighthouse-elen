@@ -17,6 +17,49 @@ document.addEventListener("DOMContentLoaded", () => {
     const preloaderBtn = document.getElementById("preloaderBtn");
 
     if (preloader && preloaderBtn) {
+      const item1 = preloader.querySelector(".preloader__item_one");
+      const item2 = preloader.querySelector(".preloader__item_two");
+      const item3 = preloader.querySelector(".preloader__item_three");
+
+      setTimeout(() => {
+        item1.classList.add("active");
+      }, 500);
+
+      setTimeout(() => {
+        item2.classList.add("active");
+      }, 1500);
+
+      setTimeout(() => {
+        item3.classList.add("active");
+      }, 2500);
+
+      setTimeout(() => {
+        item1.classList.remove("active");
+        item2.classList.remove("active");
+        item3.classList.remove("active");
+      }, 3500);
+
+      setInterval(() => {
+        setTimeout(() => {
+          item1.classList.add("active");
+        }, 500);
+
+        setTimeout(() => {
+          item2.classList.add("active");
+        }, 1500);
+
+        setTimeout(() => {
+          item3.classList.add("active");
+        }, 2500);
+
+        setTimeout(() => {
+          item1.classList.remove("active");
+          item2.classList.remove("active");
+          item3.classList.remove("active");
+        }, 3500);
+
+      }, 4500);
+
       preloaderBtn.addEventListener("click", function (e) {
         preloader.classList.toggle("active");
       });
@@ -344,11 +387,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardPage = () => {
     try {
       const tabs = document.getElementById("tabs");
+      const cardMedia = document.getElementById("cardMedia");
 
       const cardThumbEl = document.querySelectorAll("#cardThumb .carousel-cell");
 
       var $carousel = $("#cardMain").flickity({
-        pageDots: false
+        pageDots: false,
+        on: {
+          ready: function () {
+            console.log("init");
+            cardMedia.classList.add("active");
+          }
+        }
       });
 
       var $carouselBottom = $("#cardBottom").flickity({
