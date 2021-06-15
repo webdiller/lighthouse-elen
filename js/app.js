@@ -184,10 +184,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const tgcurrentSlideEl = document.getElementById("tgcurrentSlide");
       const tgallSlidesEl = document.getElementById("tgallSlides");
 
-      const topGoodsCurrentName = document.getElementById('topGoodsCurrentName');
-      const topGoodsCurrentPriceNew = document.getElementById('topGoodsCurrentPriceNew');
-      const topGoodsCurrentPriceOld = document.getElementById('topGoodsCurrentPriceOld');
-      const topGoodsCurrentLink = document.getElementById('topGoodsCurrentLink');
+      const topGoodsCurrentName = document.getElementById("topGoodsCurrentName");
+      const topGoodsCurrentPriceNew = document.getElementById("topGoodsCurrentPriceNew");
+      const topGoodsCurrentPriceOld = document.getElementById("topGoodsCurrentPriceOld");
+      const topGoodsCurrentLink = document.getElementById("topGoodsCurrentLink");
 
       var topGoodsSlider = new Swiper("#topGoodsSlider", {
         slidesPerView: 6.1,
@@ -200,15 +200,15 @@ document.addEventListener("DOMContentLoaded", () => {
         breakpoints: {
           0: {
             slidesPerView: 4.9,
-            spaceBetween: 6,
+            spaceBetween: 6
           },
           576: {
             slidesPerView: 5.1,
-            spaceBetween: 6,
+            spaceBetween: 6
           },
           991: {
             slidesPerView: 6.1,
-            spaceBetween: 20,
+            spaceBetween: 20
           }
         },
         on: {
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
             currentWrapper.classList.add("changing");
 
             let currentEl = document.querySelector("#topGoodsSlider .swiper-slide-active");
-            let {name, link, priceNew, priceOld} = currentEl.dataset;
+            let { name, link, priceNew, priceOld } = currentEl.dataset;
             topGoodsCurrentName.innerHTML = name;
             topGoodsCurrentPriceNew.innerHTML = priceNew;
             topGoodsCurrentPriceOld.innerHTML = priceOld;
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tgallSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
 
             let currentEl = document.querySelector("#topGoodsSlider .swiper-slide-active");
-            let {name, link, priceNew, priceOld} = currentEl.dataset;
+            let { name, link, priceNew, priceOld } = currentEl.dataset;
 
             topGoodsCurrentName.innerHTML = name;
             topGoodsCurrentPriceNew.innerHTML = priceNew;
@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
               currentWrapper.classList.remove("changing");
             }, 400);
-          },
+          }
         }
       });
     })();
@@ -342,44 +342,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // CARD PAGE
   const cardPage = () => {
-    const tabs = document.getElementById("tabs");
-    const cardThumbnails = document.querySelectorAll("#cardThumbnails .card__media-thumbnail-img");
-    const cardThumbnailsMain = document.getElementById("cardThumbnailsMain");
-    const cardThumbnailsMainImg = document.getElementById("cardThumbnailsMainImg");
-    const cardThumbnailsBottom = document.getElementById("cardThumbnailsBottom");
-    const cardThumbnailsBottomImg = document.getElementById("cardThumbnailsBottomImg");
+    try {
+      const tabs = document.getElementById("tabs");
 
-    if (cardThumbnails && cardThumbnailsMain && cardThumbnailsBottom) {
-      cardThumbnails.forEach(item => {
-        item.addEventListener("click", function () {
-          cardThumbnailsMain.classList.add("changing");
-          cardThumbnailsBottom.classList.add("changing");
-          cardThumbnails.forEach(i => i.parentElement.classList.remove("active"));
-          this.parentElement.classList.add("active");
-          setTimeout(() => {
-            cardThumbnailsMainImg.src = item.src;
-            cardThumbnailsBottomImg.src = item.src;
-          }, 350);
-          setTimeout(() => {
-            cardThumbnailsMain.classList.remove("changing");
-            cardThumbnailsBottom.classList.remove("changing");
-          }, 500);
-        });
+      const cardThumbEl = document.querySelectorAll("#cardThumb .carousel-cell");
+
+      var $carousel = $("#cardMain").flickity({
+        pageDots: false
       });
-    }
 
-    if (tabs) {
-      const tabTopItems = tabs.querySelectorAll("[data-tab]");
-      const tabElem = tabs.querySelectorAll("[data-tab-el]");
-
-      tabTopItems.forEach(item => {
-        item.addEventListener("click", function () {
-          tabTopItems.forEach(i => i.classList.remove("active"));
-          tabElem.forEach(i => i.classList.remove("active"));
-          this.classList.add("active");
-          document.getElementById(this.dataset.tab).classList.add("active");
-        });
+      var $carouselBottom = $("#cardBottom").flickity({
+        pageDots: false,
+        draggable: false
       });
+
+      $carouselBottom.flickity("select", 1);
+
+      var $carouselNav = $("#cardThumb");
+      var $carouselNavCells = $carouselNav.find(".carousel-cell");
+
+      $carouselNav.on("click", ".carousel-cell", function (event) {
+        var index = $(event.currentTarget).index();
+        $carouselBottom.flickity("select", index + 1);
+        $carousel.flickity("select", index);
+      });
+
+      var flkty = $carousel.data("flickity");
+      var navTop = $carouselNav.position().top;
+      var navCellHeight = $carouselNavCells.height();
+      var navHeight = $carouselNav.height();
+
+      $carousel.on("select.flickity", function (event) {
+        $carouselNav.find(".is-nav-selected").removeClass("is-nav-selected");
+        var $selected = $carouselNavCells.eq(flkty.selectedIndex).addClass("is-nav-selected");
+        $carouselBottom.flickity("select", $carousel.data("flickity").selectedIndex + 1);
+        if (window.innerWidth >= 769) {
+          var scrollY = $selected.position().top + $carouselNav.scrollTop() - (navHeight + navCellHeight) / 2;
+          $carouselNav.animate({
+            scrollTop: scrollY
+          });
+        }
+      });
+
+      if (tabs) {
+        const tabTopItems = tabs.querySelectorAll("[data-tab]");
+        const tabElem = tabs.querySelectorAll("[data-tab-el]");
+
+        tabTopItems.forEach(item => {
+          item.addEventListener("click", function () {
+            tabTopItems.forEach(i => i.classList.remove("active"));
+            tabElem.forEach(i => i.classList.remove("active"));
+            this.classList.add("active");
+            document.getElementById(this.dataset.tab).classList.add("active");
+          });
+        });
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
   cardPage();
