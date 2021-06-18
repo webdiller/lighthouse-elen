@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
           item2.classList.remove("active");
           item3.classList.remove("active");
         }, 3500);
-
       }, 4500);
 
       preloaderBtn.addEventListener("click", function (e) {
@@ -386,6 +385,46 @@ document.addEventListener("DOMContentLoaded", () => {
   // CARD PAGE
   const cardPage = () => {
     try {
+      const w = document.getElementById("cardMain").offsetWidth;
+      const h = w + 100;
+      cardMain.style.height = `${h}px`;
+    } catch (error) {
+      console.log(error);
+    }
+
+    try {
+      const slider = document.querySelector(".ebuchiiiiii-sliderrrrrr-ebanogooooooo-zakazchikaaaaaaaaa__wrapper");
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener("mousedown", e => {
+        isDown = true;
+        slider.classList.add("active");
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+        slider.classList.remove("active");
+      });
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+        slider.classList.remove("active");
+      });
+      slider.addEventListener("mousemove", e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 3; //scroll-fast
+        slider.scrollLeft = scrollLeft - walk;
+        console.log(walk);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
+    try {
       const tabs = document.getElementById("tabs");
       const cardMedia = document.getElementById("cardMedia");
 
@@ -395,7 +434,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pageDots: false,
         on: {
           ready: function () {
-            console.log("init");
             cardMedia.classList.add("active");
           }
         }
@@ -455,21 +493,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // CATALOG PAGE
   const catalogPage = () => {
-    const items = document.querySelectorAll("#catalogItems .catalog-items__item");
+    const items = document.querySelectorAll("#catalogItems .catalog-items__item .swiper-container");
     const catalogFilter = document.getElementById("catalogFilter");
-
-    if (window.location.pathname.includes("catalog")) {
-      var h = document.documentElement,
-        b = document.body,
-        st = "scrollTop",
-        sh = "scrollHeight";
-
-      const catchScroll = () => {
-        console.log("scroll");
-      };
-
-      window.addEventListener("scroll", catchScroll());
-    }
 
     if (catalogFilter) {
       catalogFilter.addEventListener("click", function (e) {
@@ -478,25 +503,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (items) {
-      items.forEach(i => {
-        const thumbs = i.querySelectorAll(".catalog-items__action");
-        thumbs.forEach(th => {
-          th.addEventListener("click", function () {
-            const imgSrc = this.dataset.src;
-            const mainElWrapper = th.parentElement.parentElement.querySelector(".catalog-items__img-wrapper");
-            const mainEl = th.parentElement.parentElement.querySelector(".catalog-items__img");
+      items.forEach(el => {
+        const swiper = new Swiper(el, {
+          speed: 400,
+          spaceBetween: 0,
+          pagination: {
+            el: ".swiper-pagination",
+            type: "bullets",
+            clickable: true,
+            cubeEffect: {
+              slideShadows: false
+            }
+          },
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true
+          },
+        });
 
-            thumbs.forEach(z => z.classList.remove("active"));
-
-            this.classList.add("active");
-            mainElWrapper.classList.add("changing");
-            setTimeout(() => {
-              mainEl.src = imgSrc;
-            }, 350);
-            setTimeout(() => {
-              mainElWrapper.classList.remove("changing");
-            }, 500);
-          });
+        $(".swiper-pagination-bullet").hover(function () {
+          $(this).trigger("click");
         });
       });
     }
