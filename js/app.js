@@ -65,11 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (topNavItems) {
-      topNavItems.forEach(item => {
-        item.addEventListener("click", function (e) {
-          item.classList.toggle("active");
+      if (window.innerWidth <= 576) {
+        topNavItems.forEach(item => {
+          item.addEventListener("click", function (e) {
+            item.classList.toggle("active");
+          });
         });
-      });
+      }
     }
 
     if (search && callSearch) {
@@ -188,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
       var textWithSlider = new Swiper("#textWithSlider", {
         slidesPerView: 3,
         spaceBetween: 30,
-        loop: false,
+        loop: true,
         navigation: {
           nextEl: ".text-with-slider__arrows .text-with-slider__arrow.text-with-slider__arrow_next",
           prevEl: ".text-with-slider__arrows .text-with-slider__arrow.text-with-slider__arrow_prev"
@@ -206,17 +208,25 @@ document.addEventListener("DOMContentLoaded", () => {
         on: {
           init: function () {
             if (currentSlideEl && allSlidesEl) {
-              const zeroPad = (num, places) => String(num).padStart(places, "0");
-              currentSlideEl.innerHTML = zeroPad(1, 2);
-              allSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
+              this.slideTo(4);
+              const count = this.slides.length - this.loopedSlides * 2;
+              const active = this.realIndex;
+
+              currentSlideEl.innerHTML = zeropad(active);
+              allSlidesEl.innerHTML = "/" + count;
             }
           },
           slideChange: function () {
-            if (currentSlideEl && allSlidesEl) {
-              const zeroPad = (num, places) => String(num).padStart(places, "0");
-              currentSlideEl.innerHTML = zeroPad(this.activeIndex + 1, 2);
-              allSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
+            const count = this.slides.length - this.loopedSlides * 2;
+            let active = this.realIndex;
+
+            if (active === 0) {
+              currentSlideEl.innerHTML = zeropad(count);
+            } else {
+              currentSlideEl.innerHTML = zeropad(active);
             }
+
+            allSlidesEl.innerHTML = " / " + count;
           }
         }
       });
@@ -234,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
       var topGoodsSlider = new Swiper("#topGoodsSlider", {
         slidesPerView: 6.1,
         spaceBetween: 20,
-        loop: false,
+        loop: true,
         navigation: {
           nextEl: ".top-goods__arrows .top-goods__arrow.top-goods__arrow_next",
           prevEl: ".top-goods__arrows .top-goods__arrow.top-goods__arrow_prev"
@@ -255,11 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         on: {
           afterInit: function () {
-            this.slideTo(1);
-
-            const zeroPad = (num, places) => String(num).padStart(places, "0");
-            tgcurrentSlideEl.innerHTML = zeroPad(1, 2);
-            tgallSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
+            this.slideTo(7);
 
             let currentWrapper = document.getElementById("currentWrapper");
             let currentImg = document.querySelector("#currentWrapper img");
@@ -280,13 +286,20 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 400);
           },
           transitionEnd: function () {
+            const count = this.slides.length - this.loopedSlides * 2;
+            let active = this.realIndex;
+
             let currentWrapper = document.getElementById("currentWrapper");
             let currentImg = document.querySelector("#currentWrapper img");
             currentWrapper.classList.add("changing");
 
-            const zeroPad = (num, places) => String(num).padStart(places, "0");
-            tgcurrentSlideEl.innerHTML = zeroPad(this.activeIndex + 1, 2);
-            tgallSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
+            if (active === 0) {
+              tgcurrentSlideEl.innerHTML = zeropad(count);
+            } else {
+              tgcurrentSlideEl.innerHTML = zeropad(active);
+            }
+            
+            tgallSlidesEl.innerHTML = " / " + count;
 
             let currentEl = document.querySelector("#topGoodsSlider .swiper-slide-active");
             let { name, link, priceNew, priceOld } = currentEl.dataset;
@@ -320,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
       var aboutSlider = new Swiper("#aboutSlider", {
         slidesPerView: 3,
         spaceBetween: 30,
-        loop: false,
+        loop: true,
         navigation: {
           nextEl: ".about-slider__arrows .about-slider__arrow.about-slider__arrow_next",
           prevEl: ".about-slider__arrows .about-slider__arrow.about-slider__arrow_prev"
@@ -341,18 +354,17 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         on: {
           init: function () {
-            const zeroPad = (num, places) => String(num).padStart(places, "0");
-            const count = this.slides.length;
-            const active = this.activeIndex;
+            this.slideTo(4);
+            const count = this.slides.length - this.loopedSlides * 2;
+            const active = this.realIndex;
 
-            const currentSlide = document.querySelector("#aboutSlider .swiper-slide-active img");
-
-            currentSlideEl.innerHTML = zeroPad(1, 2);
-            allSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
+            currentSlideEl.innerHTML = zeropad(active);
+            allSlidesEl.innerHTML = count;
           },
           transitionEnd: function () {
-            const zeroPad = (num, places) => String(num).padStart(places, "0");
-            // images
+            const count = this.slides.length - this.loopedSlides * 2;
+            let active = this.realIndex;
+
             const currentSlide = document.querySelector("#aboutSlider .swiper-slide-active img");
             const nextEl = document.querySelector("#aboutSlider .swiper-slide-active");
 
@@ -367,14 +379,13 @@ document.addEventListener("DOMContentLoaded", () => {
               rightImgWrapper.classList.remove("changing");
             }, 500);
 
-            // counter
-            currentSlideEl.innerHTML = zeroPad(this.activeIndex + 1, 2);
-            allSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
-
-            if (currentSlideEl && allSlidesEl) {
-              currentSlideEl.innerHTML = zeroPad(this.activeIndex + 1, 2);
-              allSlidesEl.innerHTML = "/ " + zeroPad(this.slides.length, 2);
+            if (active === 0) {
+              currentSlideEl.innerHTML = zeropad(count);
+            } else {
+              currentSlideEl.innerHTML = zeropad(active);
             }
+
+            allSlidesEl.innerHTML = " / " + count;
           }
         }
       });
@@ -515,16 +526,24 @@ document.addEventListener("DOMContentLoaded", () => {
               slideShadows: false
             }
           },
-          effect: 'fade',
+          effect: "fade",
           fadeEffect: {
             crossFade: true
-          },
+          }
         });
 
         $(".swiper-pagination-bullet").hover(function () {
           $(this).trigger("click");
         });
       });
+    }
+
+    try {
+      if (window.location.pathname.includes("catalog") || window.location.pathname.includes("payment-delivery")) {
+        callSearch.classList.add("active");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
   catalogPage();
@@ -616,3 +635,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   cabinetPageAndCabinetOrdersPage();
 });
+
+function zeropad(number, amount = 2) {
+  if (number >= Math.pow(10, amount)) {
+    return number;
+  }
+  return (Array(amount).join(0) + number).slice(-amount);
+}

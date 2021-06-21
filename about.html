@@ -50,7 +50,7 @@
 
     <nav class="top-nav__actions">
       <button data-type="callModal" data-trigger="modalLogin" class="top-nav__action-item top-nav__action-item_login"><img src="./images/dist/icon-user.svg" alt="" class="top-nav__action-img" />  </button>
-      <button id="callSearch" class="top-nav__action-item"><img src="./images/dist/icon-serach.svg" alt="" class="top-nav__action-img" /></button>
+      <button id="callSearch" class="top-nav__action-item top-nav__action-item_search"><img src="./images/dist/icon-serach.svg" alt="" class="top-nav__action-img" /></button>
       <a href="/basket.html" class="top-nav__action-item"><img src="./images/dist/icon-basket.svg" alt="" class="top-nav__action-img" /><span class="top-nav__action-item-counter">3</span></a>
     </nav>
 
@@ -990,26 +990,30 @@
     <div class="menu__item menu__item_large">
       <p class="menu__item-title active">Каталог <img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Каталог" /></p>
       <nav class="menu__item-list menu__item-list_columns">
-        <a href="/catalog.html" class="menu__item-link">Все товары</a>
-        <a href="/catalog.html" class="menu__item-link menu__item-link_big">SPECIAL SALE</a>
-        <a href="/catalog.html" class="menu__item-link">NEW COLLECTION</a>
-        <a href="/catalog.html" class="menu__item-link">AMOUR</a>
-        <a href="/catalog.html" class="menu__item-link">ALAKRA</a>
-        <a href="/catalog.html" class="menu__item-link">Брюки и шорты</a>
-        <a href="/catalog.html" class="menu__item-link">Верхняя одежда</a>
-        <a href="/catalog.html" class="menu__item-link">Деним</a>
-        <a href="/catalog.html" class="menu__item-link">Жакеты</a>
-        <a href="/catalog.html" class="menu__item-link">Жилеты</a>
-        <a href="/catalog.html" class="menu__item-link">Кардиганы</a>
-        <a href="/catalog.html" class="menu__item-link">Костюмы</a>
-        <a href="/catalog.html" class="menu__item-link menu__item-link_bold">Обувь и аксессуары</a>
-        <a href="/catalog.html" class="menu__item-link">Платья</a>
-        <a href="/catalog.html" class="menu__item-link menu__item-link_empty"></a>
-        <a href="/catalog.html" class="menu__item-link">Рубашки и блузы</a>
-        <a href="/catalog.html" class="menu__item-link">Толстовки и худи</a>
-        <a href="/catalog.html" class="menu__item-link">Топы и майки</a>
-        <a href="/catalog.html" class="menu__item-link">Трикотаж</a>
-        <a href="/catalog.html" class="menu__item-link">Юбки</a>
+        <div class="menu__item-list-col">
+          <a href="/catalog.html" class="menu__item-link">Все товары</a>
+          <a href="/catalog.html" class="menu__item-link menu__item-link_big">SPECIAL SALE</a>
+          <a href="/catalog.html" class="menu__item-link">NEW COLLECTION</a>
+          <a href="/catalog.html" class="menu__item-link">AMOUR</a>
+          <a href="/catalog.html" class="menu__item-link">ALAKRA</a>
+          <a href="/catalog.html" class="menu__item-link">Брюки и шорты</a>
+          <a href="/catalog.html" class="menu__item-link">Верхняя одежда</a>
+          <a href="/catalog.html" class="menu__item-link">Деним</a>
+          <a href="/catalog.html" class="menu__item-link">Жакеты</a>
+          <a href="/catalog.html" class="menu__item-link">Жилеты</a>
+        </div>
+        <div class="menu__item-list-col">
+          <a href="/catalog.html" class="menu__item-link">Кардиганы</a>
+          <a href="/catalog.html" class="menu__item-link">Костюмы</a>
+          <a href="/catalog.html" class="menu__item-link menu__item-link_bold">Обувь и аксессуары</a>
+          <a href="/catalog.html" class="menu__item-link">Платья</a>
+          <a href="/catalog.html" class="menu__item-link menu__item-link_empty"></a>
+          <a href="/catalog.html" class="menu__item-link">Рубашки и блузы</a>
+          <a href="/catalog.html" class="menu__item-link">Толстовки и худи</a>
+          <a href="/catalog.html" class="menu__item-link">Топы и майки</a>
+          <a href="/catalog.html" class="menu__item-link">Трикотаж</a>
+          <a href="/catalog.html" class="menu__item-link">Юбки</a>
+        </div>
       </nav>
     </div>
     <div class="menu__item menu__item_small">
@@ -1023,12 +1027,7 @@
       </nav>
     </div>
     <div class="menu__item menu__item_image">
-      <picture class="menu__picture">
-        <source srcset="./images/dist/menu@4x.jpg" media="(min-width: 1920px)" />
-        <source srcset="./images/dist/menu@4x.jpg" media="(min-width: 1400px)" />
-        <source srcset="./images/dist/menu@4x.jpg" media="(min-width: 991px)" />
         <img class="menu__img" src="./images/dist/menu@4x.jpg" alt="Брюки-бананы со стрелками" />
-      </picture>
     </div>
   </div>
   <div class="menu-banner">
