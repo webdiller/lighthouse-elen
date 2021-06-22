@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
               tgcurrentSlideEl.innerHTML = zeropad(active);
             }
-            
+
             tgallSlidesEl.innerHTML = " / " + count;
 
             let currentEl = document.querySelector("#topGoodsSlider .swiper-slide-active");
@@ -395,6 +395,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // CARD PAGE
   const cardPage = () => {
+    try {
+      if (window.location.pathname.includes("card")) {
+        document.body.style.overflowX = "visible";
+      }
+    } catch (error) {
+      console.log(error);
+    }
     try {
       const w = document.getElementById("cardMain").offsetWidth;
       const h = w + 100;
