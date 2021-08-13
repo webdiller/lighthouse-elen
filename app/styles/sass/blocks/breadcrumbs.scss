@@ -1,0 +1,122 @@
+.breadcrumbs {
+  display: flex;
+  @include media("<=768px") {
+    display: none;
+  }
+  &_about {
+    max-width: calc(1050px + 40px);
+    padding: 0 20px;
+    width: 100%;
+    margin: 14px auto 0 auto;
+  }
+  &_contacts {
+    max-width: calc(1050px + 40px);
+    padding: 0 20px;
+    width: 100%;
+    margin: 15px auto 99px auto;
+  }
+  &_card {
+    max-width: calc(1050px + 40px);
+    padding: 0 20px;
+    width: 100%;
+    margin: 107px auto 0 auto;
+  }
+  &_catalog {
+    max-width: calc(1300px + 40px);
+    padding: 0 20px;
+    width: 100%;
+    margin: 12px auto 83px auto;
+  }
+  &_basket {
+    max-width: calc(1300px + 40px);
+    padding: 0 20px;
+    width: 100%;
+    margin: 47px auto 60px auto;
+  }
+  &_ordering {
+    max-width: calc(1050px + 40px);
+    padding: 0 20px;
+    width: 100%;
+    justify-content: space-between;
+    margin: 47px auto 60px auto;
+  }
+  &_ordering-mobile {
+    display: none;
+    max-width: calc(1050px + 40px);
+    text-align: center;
+    padding: 0 20px;
+    margin: 20px auto 40px auto;
+
+    .breadcrumbs__item_cabinet {
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 14px;
+    }
+    @include media("<=768px") {
+      display: block;
+    }
+  }
+  &_orders {
+    max-width: calc(1050px + 40px);
+    padding: 0 20px;
+    width: 100%;
+    margin: 15px auto 74px auto;
+  }
+  &__item {
+    @include reset-link(#818181, #000000);
+    display: inline-flex;
+    align-items: center;
+    margin-right: 5px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    &_last {
+      margin-left: 5px;
+      margin-right: 0;
+      color: #000000;
+      cursor: auto;
+    }
+    &_back {
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #484848;
+      cursor: pointer;
+    }
+    &_cabinet {
+      margin-left: 0;
+      margin-right: 0;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #484848;
+      cursor: pointer;
+    }
+    &_orders {
+      margin-left: auto;
+      margin-right: 0;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #484848;
+      cursor: pointer;
+    }
+  }
+  &__item-img {
+    &_last {
+      margin-right: 5px;
+    }
+    &_back {
+      margin-right: 10px;
+    }
+    &_cabinet {
+      margin-left: 5px;
+    }
+  }
+}

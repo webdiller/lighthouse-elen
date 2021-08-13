@@ -1,0 +1,68 @@
+<div class="basket">
+  <div class="basket__wrapper">
+    <div class="basket__header">
+      <p class="subtitle3 basket__header-top-text">purchases</p>
+      <h1 class="title title_h4 basket__header-title">корзина</h1>
+    </div>
+
+    <div class="basket__items">
+      <div data-basket-item class="basket__item">
+        <div class="basket__item-media">
+          <picture class="basket__picture">
+            <source srcset="../images/dist/basket1.jpg" media="(min-width: 1920px)" />
+            <source srcset="../images/dist/basket1.jpg" media="(min-width: 1400px)" />
+            <source srcset="../images/dist/basket1.jpg" media="(min-width: 991px)" />
+            <img class="basket__img" src="../images/dist/basket1.jpg" alt="Брюки-бананы со стрелками" />
+          </picture>
+        </div>
+        <div class="basket__content">
+          <p class="basket__name">Брюки-бананы со стрелками</p>
+          <p class="basket__code">Артикул: G.N.35/6001</p>
+          <div class="basket__content-bottom">
+            <div data-type="counter" class="basket__counter">
+              <button data-type="counterMinus" class="basket__counter-btn basket__counter-btn-minus"><img src="../images/dist/icon-minus_grey.svg" alt="Убрать"></button>
+              <input readonly data-price="3980" data-type="counterInput" value="1" type="number" class="basket__counter-input" />
+              <button data-type="counterPlus" class="basket__counter-btn basket__counter-btn-plus"><img src="../images/dist/icon-plus_grey.svg" alt="Добавить"></button>
+            </div>
+            <p data-result class="basket__price"><span>3 980 </span>₽</p>
+            <button data-remove class="basket__delete"><img src="../images/dist/icon-basket_grey.svg" alt="Удалить товар" class="basket__delete-icon" /></button>
+          </div>
+        </div>
+      </div>
+
+      <div data-basket-item class="basket__item">
+        <div class="basket__item-media">
+          <picture class="basket__picture">
+            <source srcset="../images/dist/basket2.jpg" media="(min-width: 1920px)" />
+            <source srcset="../images/dist/basket2.jpg" media="(min-width: 1400px)" />
+            <source srcset="../images/dist/basket2.jpg" media="(min-width: 991px)" />
+            <img class="basket__img" src="../images/dist/basket2.jpg" alt="Брюки-бананы со стрелками" />
+          </picture>
+        </div>
+        <div class="basket__content">
+          <p class="basket__name">Брюки-бананы со стрелками</p>
+          <p class="basket__code">Артикул: G.N.35/6001</p>
+          <div class="basket__content-bottom">
+            <div data-type="counter" class="basket__counter">
+              <button data-type="counterMinus" class="basket__counter-btn basket__counter-btn-minus"><img src="../images/dist/icon-minus_grey.svg" alt="Убрать"></button>
+              <input readonly data-price="41499" data-type="counterInput" value="1" type="number" class="basket__counter-input" />
+              <button data-type="counterPlus" class="basket__counter-btn basket__counter-btn-plus"><img src="../images/dist/icon-plus_grey.svg" alt="Добавить"></button>
+            </div>
+            <p data-result class="basket__price"><span>41 499</span> ₽</p>
+            <button data-remove class="basket__delete"><img src="../images/dist/icon-basket_grey.svg" alt="Удалить товар" class="basket__delete-icon" /></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="basket__total">
+      <div class="basket__total-wrapper">
+        <p class="basket__total-title">Итого:</p>
+        <p id="basketTotal" class="basket__total-price"> <span>45 479</span>  ₽</p>
+      </div>
+    </div>
+    <div class="basket__order-wrapper">
+      <buton class="btn btn_black basket__order-btn">Оформить заказ</buton>
+    </div>
+  </div>
+</div>

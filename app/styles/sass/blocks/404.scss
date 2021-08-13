@@ -1,0 +1,48 @@
+.error {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: calc(1050px + 40px);
+    padding: 0 20px;
+    width: 100%;
+    margin: 57px auto 80px auto;
+    @include media('<=768px') {
+      margin: 20px auto 90px auto;
+      padding: 0 15px;
+    }
+  }
+  &__logo {
+    margin-bottom: 33px;
+    @include media('<=768px') {
+      margin-bottom: 20px;
+    }
+  }
+  &__logo-img {
+    @include media('<=768px') {
+      width: 85px;
+    }
+  }
+  &__title {
+    margin-bottom: 33px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    @include media("<=768px") {
+      margin-bottom: 20px;
+    }
+  }
+  &__img {
+    max-width: 608px;
+    margin-bottom: 33px;
+    @include media("<=768px") {
+     max-width: 290px;
+    }
+  }
+  &__link {
+  }
+}

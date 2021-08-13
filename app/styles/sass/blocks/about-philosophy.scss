@@ -1,0 +1,111 @@
+.about-philosophy {
+  margin-top: 75px;
+  margin-bottom: 100px;
+  @include media("<=768px") {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    max-width: calc(1050px + 40px);
+    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+    @include media("<=991px") {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    @include media("<=768px") {
+      padding: 0 15px;
+    }
+  }
+  &__media {
+    position: relative;
+    width: 40%;
+    flex: 0 1 40%;
+    margin-right: auto;
+    margin-left: 90px;
+    @include media("<=991px") {
+      width: 50%;
+      flex: 0 1 50%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    @include media("<=576px") {
+      width: 100%;
+      flex: 1 1 100%;
+      margin-right: auto;
+      margin-left: 53px;
+    }
+  }
+  &__img {
+    width: 342px;
+    height: 483px;
+    @include media("<=576px") {
+      width: 100%;
+      height: auto;
+    }
+    &-circle {
+      position: absolute;
+      top: -25px;
+      left: -75px;
+      z-index: 10;
+      @include media("<=576px") {
+        width: 107px;
+        left: -55px;
+        top: -20px;
+      }
+    }
+  }
+  &__content {
+    width: 40%;
+    flex: 0 1 40%;
+    margin-top: 28px;
+    @include media("<=991px") {
+      order: -1;
+      width: 100%;
+      flex: 0 1 100%;
+      margin-top: 0;
+      margin-bottom: 55px;
+    }
+    @include media("<=576px") {
+      margin-bottom: 50px;
+    }
+  }
+  &__top-text {
+    margin-bottom: 15px;
+    @include media("<=991px") {
+      text-align: center;
+    }
+    @include media("<=576px") {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+  &__title {
+    margin-bottom: 30px;
+    @include media("<=991px") {
+      text-align: center;
+    }
+    @include media("<=576px") {
+      margin-bottom: 28px;
+    }
+  }
+  &__text {
+    font-size: 15px;
+    line-height: 140%;
+    color: #818181;
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include media("<=768px") {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 14px;
+    }
+  }
+}

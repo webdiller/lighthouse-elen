@@ -1,0 +1,57 @@
+@import 'vars';
+@import 'mixins';
+@import 'config';
+
+// default styles
+@import 'blocks/top-nav';
+@import 'blocks/footer';
+@import 'blocks/modal';
+@import 'blocks/menu';
+@import 'blocks/breadcrumbs';
+@import 'blocks/preloader';
+@import 'blocks/table-size';
+@import 'blocks/filter';
+
+// index  page / home page
+@import 'blocks/banner';
+@import 'blocks/popular-categories';
+@import 'blocks/promotions';
+@import 'blocks/banner2';
+@import 'blocks/visit-us';
+@import 'blocks/banner3';
+@import 'blocks/about-slider';
+@import 'blocks/subscribe';
+
+// about page
+@import 'blocks/about-banner';
+@import 'blocks/about-philosophy';
+@import 'blocks/text-with-slider';
+@import 'blocks/girl-with-text';
+@import 'blocks/top-goods';
+
+// catalog page
+@import 'blocks/catalog';
+
+// card page
+@import 'blocks/card';
+
+// contacts page
+@import 'blocks/contacts';
+
+// payment-delivery page
+@import 'blocks/payment-delivery';
+
+// 404 page
+@import 'blocks/404';
+
+// basket page
+@import 'blocks/basket';
+
+// ordering page
+@import 'blocks/ordering';
+
+// cabinet page
+@import 'blocks/cabinet';
+
+// cabinet-orders page
+@import 'blocks/cabinet-orders';

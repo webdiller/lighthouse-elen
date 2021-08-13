@@ -1,0 +1,1054 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>ElanDan - Каталог</title>
+	<meta name="description" content="ElanDan">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="./fonts/stylesheet.css" />
+    <link rel="preload" as="style" href="./fonts/stylesheet.css" type="text/css" />
+
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+	<!-- <meta property="og:image" content="images/dist/preview.jpg"> -->
+	
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="preload" as="style" href="css/style.css" type="text/css" />
+
+</head>
+
+<body>
+<div id="topNav" class="top-nav">
+  <div class="top-nav__wrapper">
+    <button id="menuBtn" class="top-nav__menu">
+      <img src="./images/dist/menu-bar.svg" alt="Меню" class="top-nav__menu-img" />
+      <img src="./images/dist/menu-close.svg" alt="Меню" class="top-nav__menu-img" />
+    </button>
+
+    <a href="/" class="top-nav__logo">
+      <span class="top-nav__logo-alt">РЕФЕРЕНС</span>
+    </a>
+
+    <nav class="top-nav__links">
+      <a href="/catalog.html" class="top-nav__link top-nav__link_active">Все товары</a>
+      <a href="/catalog.html" class="top-nav__link">Трикотаж </a>
+      <a href="/catalog.html" class="top-nav__link">Костюмы </a>
+      <a href="/catalog.html" class="top-nav__link">Жакеты </a>
+      <a href="/catalog.html" class="top-nav__link top-nav__link_accent">SALE</a>
+    </nav>
+
+    <nav class="top-nav__actions">
+      <button data-type="callModal" data-trigger="modalLogin" class="top-nav__action-item top-nav__action-item_login"><img src="./images/dist/icon-user.svg" alt="" class="top-nav__action-img" />  </button>
+      <button id="callSearch" class="top-nav__action-item top-nav__action-item_search"><img src="./images/dist/icon-serach.svg" alt="" class="top-nav__action-img" /></button>
+      <a href="/basket.html" class="top-nav__action-item"><img src="./images/dist/icon-basket.svg" alt="" class="top-nav__action-img" /><span class="top-nav__action-item-counter">3</span></a>
+    </nav>
+
+    <div id="search" class="search">
+      <div class="search__wrapper">
+        
+        <div class="search__form">
+          <button type="button" class="search__loop">
+            <img src="./images/dist/search-icon.svg" alt="Поиск" class="search__loop-icon" />
+          </button>
+          <input placeholder="Поиск" type="text" class="search__input" />
+          <button id="searchReset" type="button" class="search__reset">Отмена</button>
+        </div>
+
+        <div class="search__result">
+          <div class="search__result-header">
+            <p class="search__result-header-title">По категориям</p>
+            <a href="#" class="search__result-header-item">Юбки <span class="search__result-header-text">перейти</span></a>
+          </div>
+
+          <div class="search__result-body">
+            <p class="search__result-body-title">По товарам</p>
+            <nav class="search__result-list">
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a><a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+              <a href="#" class="search__result-list-item">
+                <img src="./images/dist/search-result.jpg" alt="Юбка-плиссе с ярким рисунком" class="search__result-list-img" />
+                <p class="search__result-list-name">Юбка-плиссе с ярким рисунком</p>
+                <span class="search__result-list-text">перейти</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumbs breadcrumbs_catalog">
+  <a href="#!" class="breadcrumbs__item">Главная</a>
+  <span class="breadcrumbs__item breadcrumbs__item_last"> <img src="./images/dist/icon-arrow-right_grey.svg" alt="Главная" class="breadcrumbs__item-img breadcrumbs__item-img_last" /> Каталог</span>
+</div>
+
+<div class="catalog">
+  <div class="catalog__wrapper">
+      <div class="catalog-sidebar">
+  <div class="catalog-sidebar__wrapper">
+    <p class="title title_h4 catalog-sidebar__title">Каталог</p>
+    <nav class="catalog-sidebar__nav">
+      <a href="#!" class="catalog-sidebar__item">SPECIAL SALE</a>
+      <a href="#!" class="catalog-sidebar__item">NEW COLLECTION</a>
+      <a href="#!" class="catalog-sidebar__item">AMOUR</a>
+      <a href="#!" class="catalog-sidebar__item">ALAKRA</a>
+      <a href="#!" class="catalog-sidebar__item">Брюки и шорты</a>
+      <a href="#!" class="catalog-sidebar__item">Верхняя одежда</a>
+      <a href="#!" class="catalog-sidebar__item">Деним</a>
+      <a href="#!" class="catalog-sidebar__item">Жакеты</a>
+      <a href="#!" class="catalog-sidebar__item catalog-sidebar__item_active">Жакеты</a>
+      <a href="#!" class="catalog-sidebar__item">Подарочный сертификат</a>
+      <a href="#!" class="catalog-sidebar__item">SPECIAL SALE</a>
+      <a href="#!" class="catalog-sidebar__item">NEW COLLECTION</a>
+      <a href="#!" class="catalog-sidebar__item">AMOUR</a>
+      <a href="#!" class="catalog-sidebar__item">ALAKRA</a>
+      <a href="#!" class="catalog-sidebar__item">Брюки и шорты</a>
+      <a href="#!" class="catalog-sidebar__item">Верхняя одежда</a>
+      <a href="#!" class="catalog-sidebar__item">Деним</a>
+      <a href="#!" class="catalog-sidebar__item">Жакеты</a>
+      <a href="#!" class="catalog-sidebar__item">Юбки</a>
+    </nav>
+  </div>
+</div>
+
+      <div class="catalog__content">
+        <div class="catalog-banner">
+  <div class="catalog-banner__wrapper">
+    <div class="catalog-banner__content">
+      <img src="./images/dist/logo-empty_black.svg" alt="Платья" class="catalog-banner__logo" />
+      <h1 class="title title_h3 catalog-banner__title">Платья</h1>
+      <p class="catalog-banner__text">
+        Как принято считать, сторонники тоталитаризма в науке освещают чрезвычайно интересные
+        особенности картины в целом, однако конкретные выводы, разумеется, обнародованы.
+      </p>
+    </div>
+    <div class="catalog-banner__img-wrapper">
+      <img src="./images/dist/catalog-banner-img.jpg" alt="Платья" class="catalog-banner__img" />
+    </div>
+  </div>
+</div>
+
+
+
+        <div class="custom-select catalog__custom-select">
+          <div id="catalogFilter" class="custom-select__title-wrapper">
+            <div class="custom-select__title-desktop">
+              <p class="custom-select__title">Выберите размер <img src="./images/dist/arrow-down_grey.svg" alt="Выберите размер" class="custom-select__title-icon"></p>
+            </div>
+            <div class="custom-select__title-mobile">
+              <p class="custom-select__count">532 товара <img src="./images/dist/menu-close-mobile.svg" alt="Выберите размер" class="custom-select__count-icon"><span class="custom-select__mobile-name">Выберите размер</span></p>
+            </div>
+          </div>
+          <form class="catalog__form">
+
+            <div class="custom-checkbox catalog__form-select">
+              <input checked value="Выберите размер" id="XXS" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="XXS" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">XXS</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox catalog__form-select">
+              <input value="Выберите размер" id="XS" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="XS" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">XS</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox catalog__form-select">
+              <input value="Выберите размер" id="S" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="S" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">S</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox catalog__form-select">
+              <input value="Выберите размер" id="M" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="M" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">M</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox catalog__form-select">
+              <input value="Выберите размер" id="L" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="L" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">L</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox catalog__form-select">
+              <input value="Выберите размер" id="XL" name="chooseSize" type="checkbox" class="custom-checkbox__input">
+              <label for="XL" class="custom-checkbox__label">
+                <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">XL</span>
+              </label>
+            </div>
+
+            <button class="catalog__form-submit">применить</button>
+
+          </form>
+        </div>
+
+        <div class="catalog-items">
+  <div id="catalogItems" class="catalog-items__wrapper">
+
+    <div class="catalog-items__item catalog-items__item_1">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <!-- <img class="swiper-slide" src="./images/dist/cardalt1.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt2.jpg" alt="Миди-платье с вышивкой" /> -->
+          <img class="swiper-slide" src="./images/dist/cardalt3.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt4.jpg" alt="Миди-платье с вышивкой" />
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      
+      <div class="catalog-items__top">
+        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
+        <p class="catalog-items__top-price">7 500 ₽</p>
+      </div>
+
+      <div class="catalog-items__bottom">
+        <p class="catalog-items__bottom-sizes">
+          <input class="catalog-items__size-input" name="sizes" id="sizeXS4" />
+          <label class="catalog-items__size-label" for="sizeXS4">XS</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeS4" />
+          <label class="catalog-items__size-label" for="sizeS4">S</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeM4" />
+          <label class="catalog-items__size-label" for="sizeM4">M</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeL4" />
+          <label class="catalog-items__size-label" for="sizeL4">L</label>
+        </p>
+        <p class="catalog-items__bottom-price">7 500 ₽</p>
+        <p class="catalog-items__bottom-colors">
+          <input class="catalog-items__color-input" id="color10" name="catalogColor4" />
+          <label for="color10" style="color: #ffcd9f;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color11" name="catalogColor4" />
+          <label for="color11" style="color: #000;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color12" name="catalogColor4" />
+          <label for="color12" style="color: #c4c4c4;" class="catalog-items__color"></label>
+        </p>
+      </div>
+    </div>
+
+    <div class="catalog-items__item">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <img class="swiper-slide" src="./images/dist/cardalt1.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt2.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt3.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt4.jpg" alt="Миди-платье с вышивкой" />
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      
+      <div class="catalog-items__top">
+        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
+        <p class="catalog-items__top-price">7 500 ₽</p>
+      </div>
+
+      <div class="catalog-items__bottom">
+        <p class="catalog-items__bottom-sizes">
+          <input class="catalog-items__size-input" name="sizes" id="sizeXS4" />
+          <label class="catalog-items__size-label" for="sizeXS4">XS</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeS4" />
+          <label class="catalog-items__size-label" for="sizeS4">S</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeM4" />
+          <label class="catalog-items__size-label" for="sizeM4">M</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeL4" />
+          <label class="catalog-items__size-label" for="sizeL4">L</label>
+        </p>
+        <p class="catalog-items__bottom-price">7 500 ₽</p>
+        <p class="catalog-items__bottom-colors">
+          <input class="catalog-items__color-input" id="color10" name="catalogColor4" />
+          <label for="color10" style="color: #ffcd9f;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color11" name="catalogColor4" />
+          <label for="color11" style="color: #000;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color12" name="catalogColor4" />
+          <label for="color12" style="color: #c4c4c4;" class="catalog-items__color"></label>
+        </p>
+      </div>
+    </div>
+
+    <div class="catalog-items__item">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <img class="swiper-slide" src="./images/dist/cardalt1.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt2.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt3.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt4.jpg" alt="Миди-платье с вышивкой" />
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      
+      <div class="catalog-items__top">
+        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
+        <p class="catalog-items__top-price">7 500 ₽</p>
+      </div>
+
+      <div class="catalog-items__bottom">
+        <p class="catalog-items__bottom-sizes">
+          <input class="catalog-items__size-input" name="sizes" id="sizeXS4" />
+          <label class="catalog-items__size-label" for="sizeXS4">XS</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeS4" />
+          <label class="catalog-items__size-label" for="sizeS4">S</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeM4" />
+          <label class="catalog-items__size-label" for="sizeM4">M</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeL4" />
+          <label class="catalog-items__size-label" for="sizeL4">L</label>
+        </p>
+        <p class="catalog-items__bottom-price">7 500 ₽</p>
+        <p class="catalog-items__bottom-colors">
+          <input class="catalog-items__color-input" id="color10" name="catalogColor4" />
+          <label for="color10" style="color: #ffcd9f;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color11" name="catalogColor4" />
+          <label for="color11" style="color: #000;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color12" name="catalogColor4" />
+          <label for="color12" style="color: #c4c4c4;" class="catalog-items__color"></label>
+        </p>
+      </div>
+    </div>
+
+    <div class="catalog-items__item">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <img class="swiper-slide" src="./images/dist/cardalt1.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt2.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt3.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt4.jpg" alt="Миди-платье с вышивкой" />
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      
+      <div class="catalog-items__top">
+        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
+        <p class="catalog-items__top-price">7 500 ₽</p>
+      </div>
+
+      <div class="catalog-items__bottom">
+        <p class="catalog-items__bottom-sizes">
+          <input class="catalog-items__size-input" name="sizes" id="sizeXS4" />
+          <label class="catalog-items__size-label" for="sizeXS4">XS</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeS4" />
+          <label class="catalog-items__size-label" for="sizeS4">S</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeM4" />
+          <label class="catalog-items__size-label" for="sizeM4">M</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeL4" />
+          <label class="catalog-items__size-label" for="sizeL4">L</label>
+        </p>
+        <p class="catalog-items__bottom-price">7 500 ₽</p>
+        <p class="catalog-items__bottom-colors">
+          <input class="catalog-items__color-input" id="color10" name="catalogColor4" />
+          <label for="color10" style="color: #ffcd9f;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color11" name="catalogColor4" />
+          <label for="color11" style="color: #000;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color12" name="catalogColor4" />
+          <label for="color12" style="color: #c4c4c4;" class="catalog-items__color"></label>
+        </p>
+      </div>
+    </div>
+
+    <div class="catalog-items__item">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <img class="swiper-slide" src="./images/dist/cardalt1.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt2.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt3.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt4.jpg" alt="Миди-платье с вышивкой" />
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      
+      <div class="catalog-items__top">
+        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
+        <p class="catalog-items__top-price">7 500 ₽</p>
+      </div>
+
+      <div class="catalog-items__bottom">
+        <p class="catalog-items__bottom-sizes">
+          <input class="catalog-items__size-input" name="sizes" id="sizeXS4" />
+          <label class="catalog-items__size-label" for="sizeXS4">XS</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeS4" />
+          <label class="catalog-items__size-label" for="sizeS4">S</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeM4" />
+          <label class="catalog-items__size-label" for="sizeM4">M</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeL4" />
+          <label class="catalog-items__size-label" for="sizeL4">L</label>
+        </p>
+        <p class="catalog-items__bottom-price">7 500 ₽</p>
+        <p class="catalog-items__bottom-colors">
+          <input class="catalog-items__color-input" id="color10" name="catalogColor4" />
+          <label for="color10" style="color: #ffcd9f;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color11" name="catalogColor4" />
+          <label for="color11" style="color: #000;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color12" name="catalogColor4" />
+          <label for="color12" style="color: #c4c4c4;" class="catalog-items__color"></label>
+        </p>
+      </div>
+    </div>
+
+    <div class="catalog-items__item">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <img class="swiper-slide" src="./images/dist/cardalt1.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt2.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt3.jpg" alt="Миди-платье с вышивкой" />
+          <img class="swiper-slide" src="./images/dist/cardalt4.jpg" alt="Миди-платье с вышивкой" />
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      
+      <div class="catalog-items__top">
+        <p class="catalog-items__top-name">Миди-платье с вышивкой</p>
+        <p class="catalog-items__top-price">7 500 ₽</p>
+      </div>
+
+      <div class="catalog-items__bottom">
+        <p class="catalog-items__bottom-sizes">
+          <input class="catalog-items__size-input" name="sizes" id="sizeXS4" />
+          <label class="catalog-items__size-label" for="sizeXS4">XS</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeS4" />
+          <label class="catalog-items__size-label" for="sizeS4">S</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeM4" />
+          <label class="catalog-items__size-label" for="sizeM4">M</label>
+
+          <input class="catalog-items__size-input" name="sizes" id="sizeL4" />
+          <label class="catalog-items__size-label" for="sizeL4">L</label>
+        </p>
+        <p class="catalog-items__bottom-price">7 500 ₽</p>
+        <p class="catalog-items__bottom-colors">
+          <input class="catalog-items__color-input" id="color10" name="catalogColor4" />
+          <label for="color10" style="color: #ffcd9f;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color11" name="catalogColor4" />
+          <label for="color11" style="color: #000;" class="catalog-items__color"></label>
+
+          <input class="catalog-items__color-input" id="color12" name="catalogColor4" />
+          <label for="color12" style="color: #c4c4c4;" class="catalog-items__color"></label>
+        </p>
+      </div>
+    </div>
+    
+  </div>
+  <div class="catalog-items__show-more">
+    <button class="btn btn_black catalog-items__show-more-btn">загрузить еще</button>
+  </div>
+</div>
+
+      </div>
+  </div>
+</div>
+
+<footer class="footer footer_catalog">
+  <div class="footer__wrapper">
+    <div class="footer__lists">
+      <div class="footer__left">
+        <div class="footer__left-item">
+          <p class="footer__left-item-title">позвоните нам</p>
+          <p class="footer__left-item-subtitle">Контактный телефон</p>
+          <a href="tel:+79683660033" class="footer__left-item-text">+7 968 366 00 33</a>
+        </div>
+        <div class="footer__left-item">
+          <p class="footer__left-item-title">наш бутик</p>
+          <p class="footer__left-item-subtitle">Москва</p>
+          <p class="footer__left-item-text">Набережная Тараса Шевченко, дом 3, корпус 3</p>
+        </div>
+      </div>
+
+      <nav class="footer__nav">
+        <a href="/about.html" class="footer__nav-item">О НАС</a>
+        <a href="/catalog.html" class="footer__nav-item footer__nav-item_accent">КАТАЛОГ</a>
+        <a href="/payment-delivery.html" class="footer__nav-item footer__nav-item_mobile">ДОСТАВКА</a>
+        <a href="#!" class="footer__nav-item footer__nav-item_mobile">возврат</a>
+        <a href="/contacts.html" class="footer__nav-item">КОНТАКТЫ</a>
+      </nav>
+
+      <nav class="footer__right footer__right_desktop">
+        <a href="#!" class="footer__right-item">Политика конфиденциальности</a>
+        <a href="#!" class="footer__right-item">Пользовательское соглашение</a>
+        <a href="#!" class="footer__right-item footer__right-item_accent">Оферта</a>
+      </nav>
+    </div>
+
+    <div class="footer__line"></div>
+
+    <div class="footer__copy">
+      <a href="#!" class="footer__copy-logo">
+        <img src="./images/dist/logo-footer.svg" alt="Elen dan" class="footer__copy-img" />
+      </a>
+      <p class="footer__copy-text">© 2021 ELEN DAN</p>
+    </div>
+  </div>
+</footer>
+
+	<!-- popup добвление в корзину -->
+	<div data-type="modal" id="modalAddBasket" class="modal">
+		<div class="modal__container">
+			<div class="modal__wrapper modal__wrapper_basket">
+				<div class="modal__top">
+					<button class="modal__top-close"> <img src="./images/dist/icon-close.svg" alt="Закрыть" class="modal__top-close-img"></button>
+				</div>
+				<p class="title title_h3 modal__title">Спасибо!</p>
+				<p class="modal__subtitle modal__subtitle_basket">Товар успешно добавлен в корзину.</p>
+				<button class="btn btn_black modal__btn modal__btn_basket">оформить заказ</button>
+				<button class="modal__btn-thin">Продолжить покупки</button>
+			</div>
+		</div>
+	</div>
+	
+	<!-- popup форма -->
+	<div data-type="modal" id="modalCall" class="modal">
+		<div class="modal__container">
+			<div class="modal__wrapper modal__wrapper_call">
+				<div class="modal__top">
+					<button class="modal__top-close"> <img src="./images/dist/icon-close.svg" alt="Закрыть" class="modal__top-close-img"></button>
+				</div>
+				<p class="title title_h3 modal__title">Свяжитесь с нами!</p>
+				<p class="modal__subtitle">
+					Закажите обратный звонок и мы <br>
+					проконсультируем вас <br>
+					по любому вопросу.
+				</p>
+				<form class="modal__form">
+					<input placeholder="ваше имя" type="text" class="custom-input modal__input" />
+					<input placeholder="ваш телефон" type="text" class="custom-input modal__input modal__input_last" />
+					<p class="modal__agree">
+						* Отправляю данную форму даю согласие на обработку персональных данных
+					</p>
+					<button class="btn btn_black modal__btn">отправить зявку</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<!-- popup ответ на форму -->
+	<div data-type="modal" id="modalCallSuccess" class="modal">
+		<div class="modal__container">
+			<div class="modal__wrapper modal__wrapper_call-success">
+				<div class="modal__top">
+					<button class="modal__top-close"> <img src="./images/dist/icon-close.svg" alt="Закрыть" class="modal__top-close-img"></button>
+				</div>
+				<p class="title title_h3 modal__title">Спасибо!</p>
+				<p class="modal__subtitle modal__subtitle_call-success">Наш менеджер свяжется с вами <br> в течении двух часов.</p>
+				<a href="/" class="btn btn_black modal__btn">На главную</a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- popup благодарность за заказ -->
+	<div data-type="modal" id="modalOrderSuccess" class="modal">
+		<div class="modal__container">
+			<div class="modal__wrapper modal__wrapper_order-success">
+				<div class="modal__top">
+					<button class="modal__top-close"> <img src="./images/dist/icon-close.svg" alt="Закрыть" class="modal__top-close-img"></button>
+				</div>
+				<p class="title title_h3 modal__title modal__title_order-success">Спасибо!</p>
+				<p class="modal__subtitle modal__subtitle_order-success">
+					Ваш заказ успешно оформлен. <br>
+					Ожидайте уведомление на электронную почту <br>
+					и звонок от нашего менеджера.</p>
+				<a href="/" class="btn btn_black modal__btn">На главную</a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Войти / Регистрация -->
+	<div data-type="modal" id="modalLogin" class="modal">
+		<div class="modal__container">
+			<div class="modal__wrapper modal__wrapper_login">
+				<div class="modal__top">
+					<button class="modal__top-close"> <img src="./images/dist/icon-close.svg" alt="Закрыть" class="modal__top-close-img"></button>
+				</div>
+				<p class="title title_h3 modal__title_login">АВТОРИЗАЦИЯ ПО НОМЕРУ</p>
+				<form class="modal__form modal__form_login">
+					<input placeholder="ваш телефон" type="text" class="custom-input modal__input" />
+					<input placeholder="ВВЕДИТЕ КОД" type="text" class="custom-input modal__input" />
+					<button class="btn btn_black modal__btn modal__btn_login">получить код</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Подпишитесь на новости -->
+	<div id="modalSubscribe" data-type="modal" class="subscribe-modal">
+		<div class="subscribe-modal__wrapper">
+			<button class="subscribe-modal__close"><img src="./images/dist/icon-close.svg" alt="Закрыть" class="subscribe-modal__close-img"></button>
+			<p class="title title_h4 subscribe-modal__title">Подпишитесь на новости!</p>
+			<div class="subscribe-modal__line">
+				<img src="./images/dist/subscribe-modal-logo.svg" alt="Подпишитесь на новости!" class="subscribe-modal__line-img">
+				<p class="subscribe-modal__line-text">и получите <br> скидку 5%</p>
+			</div>
+			<div class="subscribe-modal__subtext">узнавайте о новых колекциях, новостях и скидках</div>
+			<form class="subscribe-modal__form subscribe-form">
+				<div class="subscribe-form__row">
+					<input type="email" placeholder="ваш еmail" class="subscribe-form__input" />
+					<button class="subscribe-form__submit">
+					подписаться
+					<img
+						src="./images/dist/icon-arrow-right_black.svg"
+						alt="подписаться"
+						class="subscribe-form__submit-img"
+					/>
+					</button>
+				</div>
+				<div class="subscribe-form__agree">
+					<img class="subscribe-form__agree-img" src="./images/dist/icon-rect-fill_black.svg"
+					alt="Я соглашаюсь на обработку моих персональных данных и ознакомлен(а) с условиями
+					публичной оферты" /> Я соглашаюсь на обработку моих персональных данных и
+					ознакомлен(а) с условиями публичной оферты
+				</div>
+			</form>
+			<picture class="subscribe-modal__picture">
+				<source srcset="./images/dist/subscribe-modal@4x.png" media="(min-width: 1920px)" />
+				<source srcset="./images/dist/subscribe-modal@3x.png" media="(min-width: 1400px)" />
+				<source srcset="./images/dist/subscribe-modal@2x.png" media="(min-width: 991px)" />
+				<img src="./images/dist/subscribe-modal@1x.png" alt="Подпишитесь на новости" class="subscribe-modal__img">
+			</picture>
+		</div>
+	</div>
+
+	<!-- preloader -->
+	<div id="preloader" class="preloader">
+		<div class="preloader__wrapper">
+			<img src="./images/dist/preloader-img.svg" alt="Loading" class="preloader__img">
+			<div class="preloader__status">
+				<p class="preloader__status-title">loading</p>
+				<span class="preloader__status-item preloader__status-item_1"></span>
+				<span class="preloader__status-item preloader__status-item_2"></span>
+				<span class="preloader__status-item preloader__status-item_3"></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Таблица размеров -->
+	<div id="tableSize" data-type="modal" class="table-size">
+		<div class="table-size__wrapper">
+			<div class="table-size__header">
+				<p class="table-size__header-title">Таблица размеров
+				<span class="table-size__header-text">(самнтиметры)</span>
+				</p>
+				<button class="table-size__header-close"><img src="./images/dist/icon-close.svg" alt="Закрыть" class="table-size__header-close-img"></button>
+			</div>
+			<div class="table-size__table">
+				<div class="table-size__row table-size__row_head">
+					<div class="table-size__col">INT</div>
+					<div class="table-size__col">Рост</div>
+					<div class="table-size__col">ОГ</div>
+					<div class="table-size__col">ОТ</div>
+					<div class="table-size__col">ОБ</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+				<div class="table-size__row">
+					<div class="table-size__col">XXS</div>
+					<div class="table-size__col">164</div>
+					<div class="table-size__col">80</div>
+					<div class="table-size__col">60</div>
+					<div class="table-size__col">88</div>
+				</div>
+			</div>
+			<p class="title title_h4 table-size__title">Как снимать мерки?</p>
+			<p class="table-size__text">Для того, чтобы правильно выбрать размер,снимите мерки по инструкции ниже:</p>
+			<ul class="table-size__list">
+				<li class="table-size__list-item">Обхват груди измеряется вокруг туловища по самой выступающей линии бюста.</li>
+				<li class="table-size__list-item">Обхват талии измеряется по самой узкой линии талии.</li>
+				<li class="table-size__list-item">Обхват бедер измеряется в области на 20 см ниже талии, по линии максимальной ширины бедер.</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Фильтр / settings для каталога -->
+	<div id="filter" data-type="modal" class="filter">
+		<form class="filter__wrapper">
+			<button type="button" class="filter__header-close"><img src="./images/dist/icon-close.svg" alt="Закрыть" class="filter__header-close-img"></button>
+			<p class="numbers2 filter__title filter__title_price">цена</p>
+			<div class="filter__inputs">
+				<input placeholder="от" type="text" class="custom-input filter__input">
+				<input placeholder="до" type="text" class="custom-input filter__input">
+			</div>			
+			<p class="numbers2 filter__title filter__title_collection">коллекция</p>
+			<div class="filter__collections">
+				<div class="custom-checkbox custom-checkbox_catalog filter__collection">
+					<input id="collection1" checked name="collection" type="checkbox" class="custom-checkbox__input" />
+					<label for="collection1" class="custom-checkbox__label">
+					  <span class="custom-checkbox__inner"></span>
+					  <span class="custom-checkbox__outer"></span>
+					  <span class="custom-checkbox__text">Коллекция 1</span>
+					</label>
+				</div>
+				<div class="custom-checkbox custom-checkbox_catalog filter__collection">
+					<input id="collection2"  name="collection" type="checkbox" class="custom-checkbox__input" />
+					<label for="collection2" class="custom-checkbox__label">
+					  <span class="custom-checkbox__inner"></span>
+					  <span class="custom-checkbox__outer"></span>
+					  <span class="custom-checkbox__text">Коллекция 2</span>
+					</label>
+				</div>
+				<div class="custom-checkbox custom-checkbox_catalog filter__collection">
+					<input id="collection3"  name="collection" type="checkbox" class="custom-checkbox__input" />
+					<label for="collection3" class="custom-checkbox__label">
+					  <span class="custom-checkbox__inner"></span>
+					  <span class="custom-checkbox__outer"></span>
+					  <span class="custom-checkbox__text">Коллекция 3</span>
+					</label>
+				</div>
+			</div>
+			<p class="numbers2 filter__title filter__title_size">Размер</p>
+			<div class="filter__sizes">
+				<div class="filter__sizes-column">
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizexss" name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizexss" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">XXS</span>
+						</label>
+					</div>
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizexs" name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizexs" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">XS</span>
+						</label>
+					</div>
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizes" name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizes" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">S</span>
+						</label>
+					</div>
+				</div>
+				<div class="filter__sizes__column">
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizem"  name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizem" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">M</span>
+						</label>
+					</div>
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizel" name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizel" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">L</span>
+						</label>
+					</div>
+					<div class="custom-checkbox custom-checkbox_catalog filter__size">
+						<input id="sizexl" name="size" type="checkbox" class="custom-checkbox__input" />
+						<label for="sizexl" class="custom-checkbox__label">
+						  <span class="custom-checkbox__inner"></span>
+						  <span class="custom-checkbox__outer"></span>
+						  <span class="custom-checkbox__text">XL</span>
+						</label>
+					</div>
+				</div>
+				
+			</div>
+			<p class="numbers2 filter__title filter__title_color">цвет</p>
+			<div class="filter__colors">
+				<div class="filter__colors-row">
+					<input class="filter__colors-input" id="color#ffcd9f" type="checkbox" name="filterColor">
+					<label for="color#ffcd9f" style="color: #ffcd9f;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#000" type="checkbox" name="filterColor">
+					<label for="color#000" style="color: #000;" class="filter__colors-label"></label>
+
+					<input class="filter__colors-input" id="color#C4C4C4" type="checkbox" name="filterColor">
+					<label for="color#C4C4C4" style="color: #C4C4C4;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#fff" type="checkbox" name="filterColor">
+					<label for="color#fff" style="color: #fff;" class="filter__colors-label filter__colors-label_border"></label>
+
+					<input class="filter__colors-input" id="color#FF0000" type="checkbox" name="filterColor">
+					<label for="color#FF0000" style="color: #FF0000;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#387C02" type="checkbox" name="filterColor">
+					<label for="color#387C02" style="color: #387C02;" class="filter__colors-label"></label>
+				</div>
+				<div class="filter__colors-row">
+					<input class="filter__colors-input" id="color#1BD6FF" type="checkbox" name="filterColor">
+					<label for="color#1BD6FF" style="color: #1BD6FF;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#00109C" type="checkbox" name="filterColor">
+					<label for="color#00109C" style="color: #00109C;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#9C00D2" type="checkbox" name="filterColor">
+					<label for="color#9C00D2" style="color: #9C00D2;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#F600DE" type="checkbox" name="filterColor">
+					<label for="color#F600DE" style="color: #F600DE;" class="filter__colors-label"></label>
+					
+					<input class="filter__colors-input" id="color#FFC700" type="checkbox" name="filterColor">
+					<label for="color#FFC700" style="color: #FFC700;" class="filter__colors-label"></label>
+			
+					<input class="filter__colors-input" id="color#7C0202" type="checkbox" name="filterColor">
+					<label for="color#7C0202" style="color: #7C0202;" class="filter__colors-label"></label>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<div id="menu" class="menu">
+  <img class="menu__bg-icon" src="./images/dist/menu-bg-icon.svg" alt="Каталог" />
+  <button id="menuClose" class="menu__close"><img src="./images/dist/menu-close-mobile.svg" alt="Закрыть" class="menu__close-img" /></button>
+  <div class="menu__wrapper">
+    <div class="menu__item menu__item_large">
+      <p class="menu__item-title active">Каталог <img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Каталог" /></p>
+      <nav class="menu__item-list menu__item-list_columns">
+        <div class="menu__item-list-col">
+          <a href="/catalog.html" class="menu__item-link">Все товары</a>
+          <a href="/catalog.html" class="menu__item-link menu__item-link_big">SPECIAL SALE</a>
+          <a href="/catalog.html" class="menu__item-link">NEW COLLECTION</a>
+          <a href="/catalog.html" class="menu__item-link">AMOUR</a>
+          <a href="/catalog.html" class="menu__item-link">ALAKRA</a>
+          <a href="/catalog.html" class="menu__item-link">Брюки и шорты</a>
+          <a href="/catalog.html" class="menu__item-link">Верхняя одежда</a>
+          <a href="/catalog.html" class="menu__item-link">Деним</a>
+          <a href="/catalog.html" class="menu__item-link">Жакеты</a>
+          <a href="/catalog.html" class="menu__item-link">Жилеты</a>
+        </div>
+        <div class="menu__item-list-col">
+          <a href="/catalog.html" class="menu__item-link">Кардиганы</a>
+          <a href="/catalog.html" class="menu__item-link">Костюмы</a>
+          <a href="/catalog.html" class="menu__item-link menu__item-link_bold">Обувь и аксессуары</a>
+          <a href="/catalog.html" class="menu__item-link">Платья</a>
+          <a href="/catalog.html" class="menu__item-link menu__item-link_empty"></a>
+          <a href="/catalog.html" class="menu__item-link">Рубашки и блузы</a>
+          <a href="/catalog.html" class="menu__item-link">Толстовки и худи</a>
+          <a href="/catalog.html" class="menu__item-link">Топы и майки</a>
+          <a href="/catalog.html" class="menu__item-link">Трикотаж</a>
+          <a href="/catalog.html" class="menu__item-link">Юбки</a>
+        </div>
+      </nav>
+    </div>
+    <div class="menu__item menu__item_small">
+      <p class="menu__item-title active">Информация <img class="menu__item-title-img" src="./images/dist/arrow-down_grey.svg" alt="Информация" /></p>
+      <nav class="menu__item-list menu__item-list_info">
+        <a href="/catalog.html" class="menu__item-link">Доставка </a>
+        <a href="/catalog.html" class="menu__item-link">Возврат</a>
+        <a href="/catalog.html" class="menu__item-link">О нас</a>
+        <a href="/catalog.html" class="menu__item-link">Контакты</a>
+        <a href="/catalog.html" class="menu__item-link menu__item-link_underline">Личный кабинет</a>
+      </nav>
+    </div>
+    <div class="menu__item menu__item_image">
+        <img class="menu__img" src="./images/dist/menu@4x.jpg" alt="Брюки-бананы со стрелками" />
+    </div>
+  </div>
+  <div class="menu-banner">
+    <img src="./images/dist/menu-banner-img.jpg" alt="special sale" class="menu-banner__image" />
+    <div class="menu-banner__wrapper">
+      <p class="menu-banner__top-text">special sale</p>
+      <p class="menu-banner__number">-20%</p>
+      <p class="menu-banner__subtext">
+        на все платья на бретелях <br />
+        из любой коллекции
+      </p>
+      <a href="#" class="menu-banner__link">Смотреть </a>
+    </div>
+  </div>
+  <div class="menu-contact">
+    <div class="menu-contact__item">
+      <p class="menu-contact__title">позвоните нам</p>
+      <p class="menu-contact__subtitle">Контактный телефон</p>
+      <a href="tel:+79683660033" class="menu-contact__subtitle">+7 968 366 00 33</a>
+    </div>
+    <div class="menu-contact__item">
+      <p class="menu-contact__title">наш бутик</p>
+      <p class="menu-contact__subtitle">
+        Москва, <br />
+        Набережная Тараса Шевченко, <br />
+        дом 3, корпус 3
+      </p>
+    </div>
+  </div>
+</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" integrity="sha512-qzrZqY/kMVCEYeu/gCm8U2800Wz++LTGK4pitW/iswpCbjwxhsmUwleL1YXaHImptCHG0vJwU7Ly7ROw3ZQoww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+	<script src="./js/app.min.js"></script>
+
+</body>
+</html>

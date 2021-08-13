@@ -1,0 +1,162 @@
+<div class="ordering">
+  <div class="ordering__wrapper">
+    <div class="ordering__header">
+      <p class="subtitle3 ordering__header-top-text">ordering</p>
+      <h1 class="title title_h4 ordering__header-title">оформление заказа</h1>
+    </div>
+
+    <div class="breadcrumbs breadcrumbs_ordering-mobile">
+      <a href="#" class="breadcrumbs__item breadcrumbs__item_cabinet"> войти в личный кабинет <img src="../images/dist/icon-arrow-right_grey.svg" alt="Главная" class="breadcrumbs__item-img breadcrumbs__item-img_cabinet" /> </a>
+    </div>
+
+    <div class="ordering__content">
+      <form id="orderingForm" class="ordering__fields">
+        <!-- Доставка -->
+        <div class="ordering__field ordering__field_delivery">
+          <p class="numbers2 ordering__field-title">Доставка</p>
+
+          <div class="ordering__checkboxes">
+            <div class="custom-checkbox ordering__content-checkbox">
+              <input value="Доставка" id="orderingDelivery1" checked name="orderingDelivery" type="radio" class="custom-checkbox__input" />
+              <label for="orderingDelivery1" class="custom-checkbox__label">
+                  <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">Доставка</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox ordering__content-checkbox">
+              <input value="Самовывоз" id="orderingDelivery2" name="orderingDelivery" type="radio" class="custom-checkbox__input" />
+              <label for="orderingDelivery2" class="custom-checkbox__label">
+                  <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">Самовывоз из магазина</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="ordering__delivery-fields">
+            <input placeholder="страна" type="text" class="custom-input ordering__input-full" />
+            <input placeholder="город" type="text" class="custom-input ordering__input-full" />
+            <input placeholder="улица" type="text" class="custom-input ordering__input-full" />
+            <div class="ordering__inputs">
+              <input placeholder="дом" type="text" class="custom-input ordering__input-half" />
+              <input placeholder="квартира" type="text" class="custom-input ordering__input-half" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Данные -->
+        <div class="ordering__field">
+          <p class="numbers2 ordering__field-title">Данные</p>
+          <input placeholder="Ваше имя" type="text" class="custom-input ordering__input-full" />
+          <input placeholder="ваша фамилия" type="text" class="custom-input ordering__input-full" />
+          <input placeholder="ваш E-mail" type="text" class="custom-input ordering__input-full" />
+          <input placeholder="ваш телефон" type="text" class="custom-input ordering__input-full" />
+        </div>
+
+        <!-- Оплата -->
+        <div class="ordering__field">
+          <p class="numbers2 ordering__field-title">Оплата</p>
+
+          <div class="ordering__checkboxes">
+            <div class="custom-checkbox ordering__content-checkbox">
+              <input id="orderingPayment1" checked name="orderingPayment" type="radio" class="custom-checkbox__input" />
+              <label for="orderingPayment1" class="custom-checkbox__label">
+                  <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">Онлайн оплата</span>
+              </label>
+            </div>
+
+            <div class="custom-checkbox ordering__content-checkbox">
+              <input id="orderingPayment2" name="orderingPayment" type="radio" class="custom-checkbox__input" />
+              <label for="orderingPayment2" class="custom-checkbox__label">
+                  <img src="./images/dist/icon-rectangle_checked.svg" alt="" class="custom-checkbox__img custom-checkbox__img_checked">
+                <img src="./images/dist/icon-rectangle_empty.svg" alt="" class="custom-checkbox__img custom-checkbox__img_empty">
+                <span class="custom-checkbox__text">Наличными при получении</span>
+              </label>
+            </div>
+          </div>
+
+          <input placeholder="карта клиента" type="text" class="custom-input ordering__input-full" />
+          <input placeholder="промокод" type="text" class="custom-input ordering__input-full" />
+          <input placeholder="комментарий" type="text" class="custom-input ordering__input-full" />
+
+          <div class="ordering__total">
+            <div class="ordering__total-item">
+              <p class="ordering__total-text">Доставка:</p>
+              <p class="ordering__total-price">599 ₽</p>
+            </div>
+            <div class="ordering__total-item">
+              <p class="ordering__total-text">Итого:</p>
+              <p class="ordering__total-price">55 579 ₽</p>
+            </div>
+            <button type="button" data-type="callModal" data-trigger="modalOrderSuccess" class="ordering__total-btn btn btn_black">оформить заказ</button>
+            <p class="ordering__total-agree">
+              *Оставляя заявку, вы согласны <br />
+              с политикой обработки персональных данных
+            </p>
+          </div>
+        </div>
+      </form>
+      <div id="showMainCard" class="ordering__main">
+        <div class="ordering__main-items">
+          <div class="ordering__main-item">
+            <picture class="ordering__main-picture">
+              <source srcset="../images/dist/basket1.jpg" media="(min-width: 1920px)" />
+              <source srcset="../images/dist/basket1.jpg" media="(min-width: 1400px)" />
+              <source srcset="../images/dist/basket1.jpg" media="(min-width: 991px)" />
+              <img class="ordering__main-img" src="../images/dist/basket1.jpg" alt="Брюки-бананы со стрелками" />
+            </picture>
+            <div class="ordering__main-content">
+              <p class="ordering__main-name">Брюки-бананы со стрелками</p>
+              <p class="ordering__main-code">Артикул: G.N.35/6001</p>
+              <div class="ordering__main-color-wrapper">
+                <p style="color: #534930;" class="ordering__main-color"></p>
+              </div>
+              <p class="ordering__main-sizes">
+                <span class="ordering__main-sizes-title">размер:</span>
+                <span class="ordering__main-size">XS</span>
+              </p>
+              <p class="ordering__main-price">3 980 ₽</p>
+            </div>
+          </div>
+
+          <div class="ordering__main-item">
+            <picture class="ordering__main-picture">
+              <source srcset="../images/dist/basket2.jpg" media="(min-width: 1920px)" />
+              <source srcset="../images/dist/basket2.jpg" media="(min-width: 1400px)" />
+              <source srcset="../images/dist/basket2.jpg" media="(min-width: 991px)" />
+              <img class="ordering__main-img" src="../images/dist/basket2.jpg" alt="Брюки-бананы со стрелками" />
+            </picture>
+            <div class="ordering__main-content">
+              <p class="ordering__main-name">Брюки-бананы со стрелками</p>
+              <p class="ordering__main-code">Артикул: G.N.35/6001</p>
+              <div class="ordering__main-color-wrapper">
+                <p style="color: #d5c4bd;" class="ordering__main-color"></p>
+              </div>
+              <p class="ordering__main-sizes">
+                <span class="ordering__main-sizes-title">размер:</span>
+                <span class="ordering__main-size">XS</span>
+              </p>
+              <p class="ordering__main-price">51 000 ₽</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ordering__main-total">
+          <div class="ordering__main-total-item">
+            <p class="ordering__main-total-title">Доставка:</p>
+            <p class="ordering__main-total-price">599 ₽</p>
+          </div>
+          <div class="ordering__main-total-item">
+            <p class="ordering__main-total-title">Итого:</p>
+            <p class="ordering__main-total-price">54 980 ₽</p>
+          </div>
+        </div>
+      </div>
+      <button id="showMainCardBtn" class="ordering__show">Подробности заказа <img src="../images/dist/arrow-down_grey.svg" alt="Подробности заказа" class="ordering__show-img" /></button>
+    </div>
+  </div>
+</div>
