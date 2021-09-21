@@ -450,6 +450,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       var $carousel = $("#cardMain").flickity({
         pageDots: false,
+        selectedAttraction: 0.08,
+        friction: 0.8,
+        cellAlign: 'left',
         on: {
           ready: function () {
             cardMedia.classList.add("active");
@@ -505,6 +508,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       // console.log(error);
+    }
+
+    // fancybox start
+    try {
+      Fancybox.bind("#cardMobile a", {
+        // Your options
+      });
+    } catch (error) {
+      console.log('Handle error: ', error);
     }
   };
   cardPage();
