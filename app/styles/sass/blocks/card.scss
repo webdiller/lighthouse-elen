@@ -62,7 +62,7 @@
         visibility: visible;
       }
       &.active {
-        overflow: visible;
+        overflow: hidden;
       }
       &.active::before {
         opacity: 0;
