@@ -403,120 +403,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // console.log(error);
     }
     try {
-      const w = document.getElementById("cardMain").offsetWidth;
-      const h = w + 100;
-      cardMain.style.height = `${h}px`;
-    } catch (error) {
-      // console.log(error);
-    }
-
-    try {
-      const slider = document.querySelector(".card-slider__wrapper");
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-
-      slider.addEventListener("mousedown", e => {
-        isDown = true;
-        slider.classList.add("active");
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-      });
-      slider.addEventListener("mouseleave", () => {
-        isDown = false;
-        slider.classList.remove("active");
-      });
-      slider.addEventListener("mouseup", () => {
-        isDown = false;
-        slider.classList.remove("active");
-      });
-      slider.addEventListener("mousemove", e => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 3; //scroll-fast
-        slider.scrollLeft = scrollLeft - walk;
-        console.log(walk);
+      var mobileSlider = new Swiper("#mobileSlider", {
+        spaceBetween: 10,
+        pagination: {
+          el: "#mobileSlider + .swiper-pagination",
+          clickable: true
+        },
       });
     } catch (error) {
-      // console.log(error);
-    }
-
-    try {
-      const tabs = document.getElementById("tabs");
-      const cardMedia = document.getElementById("cardMedia");
-
-      const cardThumbEl = document.querySelectorAll("#cardThumb .carousel-cell");
-
-      var $carousel = $("#cardMain").flickity({
-        pageDots: false,
-        selectedAttraction: 0.08,
-        friction: 0.8,
-        cellAlign: 'left',
-        on: {
-          ready: function () {
-            cardMedia.classList.add("active");
-          }
-        }
-      });
-
-      var $carouselBottom = $("#cardBottom").flickity({
-        pageDots: false,
-        draggable: false
-      });
-
-      $carouselBottom.flickity("select", 1);
-
-      var $carouselNav = $("#cardThumb");
-      var $carouselNavCells = $carouselNav.find(".carousel-cell");
-
-      $carouselNav.on("click", ".carousel-cell", function (event) {
-        var index = $(event.currentTarget).index();
-        $carouselBottom.flickity("select", index + 1);
-        $carousel.flickity("select", index);
-      });
-
-      var flkty = $carousel.data("flickity");
-      var navTop = $carouselNav.position().top;
-      var navCellHeight = $carouselNavCells.height();
-      var navHeight = $carouselNav.height();
-
-      $carousel.on("select.flickity", function (event) {
-        $carouselNav.find(".is-nav-selected").removeClass("is-nav-selected");
-        var $selected = $carouselNavCells.eq(flkty.selectedIndex).addClass("is-nav-selected");
-        $carouselBottom.flickity("select", $carousel.data("flickity").selectedIndex + 1);
-        if (window.innerWidth >= 769) {
-          var scrollY = $selected.position().top + $carouselNav.scrollTop() - (navHeight + navCellHeight) / 2;
-          $carouselNav.animate({
-            scrollTop: scrollY
-          });
-        }
-      });
-
-      if (tabs) {
-        const tabTopItems = tabs.querySelectorAll("[data-tab]");
-        const tabElem = tabs.querySelectorAll("[data-tab-el]");
-
-        tabTopItems.forEach(item => {
-          item.addEventListener("click", function () {
-            tabTopItems.forEach(i => i.classList.remove("active"));
-            tabElem.forEach(i => i.classList.remove("active"));
-            this.classList.add("active");
-            document.getElementById(this.dataset.tab).classList.add("active");
-          });
-        });
-      }
-    } catch (error) {
-      // console.log(error);
-    }
-
-    // fancybox start
-    try {
-      Fancybox.bind("#cardMobile a", {
-        // Your options
-      });
-    } catch (error) {
-      console.log('Handle error: ', error);
+      
     }
   };
   cardPage();
